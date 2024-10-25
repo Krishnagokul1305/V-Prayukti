@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'avantn';
+  src: url('./assets/font/AVANTN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "avantn", sans-serif, serif;
+  font-size: calc(1.88679vw);
+  /* transition: all 0.5s ease; */
+}
+
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eb5939;
+  border: 4px solid transparent;
+  border-radius: 9px;
+  background-clip: content-box;
+}
+
+/* 
+.comingsoon{
+  background: url("./assets/images/earthHalf.png") no-repeat bottom center; 
+   filter: grayscale(100%);
+} */
+
+  
