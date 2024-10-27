@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
+import { navItems, socialLinks } from "../constants/constants";
 
 function NavMenu({ setMenuOpen }) {
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+
   return (
     <motion.div
-      className="bg-black h-screen w-full text-gray-400 fixed top-0 left-0 z-50 flex flex-col justify-between py-10 px-10 md:px-20 text-2xl md:text-4xl"
+      className="bg-black h-screen w-full text-gray-400 fixed top-0 left-0 z-50 flex flex-col justify-between py-10 px-10 md:pe-10 md:ps-20 text-2xl md:text-4xl"
       initial="hidden"
       animate="visible"
       exit="hidden"
@@ -23,48 +25,15 @@ function NavMenu({ setMenuOpen }) {
         </button>
       </div>
       <div className="flex flex-col space-y-6 w-fit">
-        <a
-          href="#home"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Home
-        </a>
-        <a
-          href="#events"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Events
-        </a>
-        <a
-          href="#competitions"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Competitions
-        </a>
-        <a
-          href="#workshops"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Workshops
-        </a>
-        <a
-          href="#accommodation"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Accommodation
-        </a>
-        <a
-          href="#social-cause"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Social Cause
-        </a>
-        <a
-          href="#team"
-          className="hover:italic hover:text-gray-100 transition duration-300"
-        >
-          Team
-        </a>
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            className="hover:italic  hover:text-gray-100 transition duration-300"
+          >
+            {item.name}
+          </a>
+        ))}
       </div>
       <div className="flex space-x-3 text-sm text-gray-500">
         <p className="hover:text-gray-400 transition duration-300 italic">
@@ -73,7 +42,7 @@ function NavMenu({ setMenuOpen }) {
         <div className="space-x-3">
           <span>/ </span>
           <a
-            href="#instagram"
+            onClick={()=>window.open(socialLinks.instagram)}
             className="hover:italic hover:text-gray-400 transition duration-300"
           >
             Instagram

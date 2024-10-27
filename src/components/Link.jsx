@@ -8,7 +8,7 @@ function Link({ link, Icon }) {
       dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50 }}
       whileHover={{ scale: 1.1 }}
     >
-      <a href={link} className="link-style">
+      <a href={link} className="link-style" rel="noreferrer" target="_blank">
         <Icon className="h-6" />
       </a>
     </motion.div>

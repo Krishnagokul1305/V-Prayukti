@@ -19,9 +19,9 @@ function HeroSection() {
         muted
         playsInline
       />
-      <div className="relative flex flex-col md:text-[6vw] text-5xl font-semibold text-center w-[80%] text-primary">
+      <div className="relative flex flex-col md:text-[9vw] text-5xl font-semibold text-center w-[80%] text-primary">
         <motion.span
-          className="tracking-[1.2rem] text-sm md:text-base mb-5 text-secondary"
+          className="text-sm mb-5 tracking-widest"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -30,12 +30,12 @@ function HeroSection() {
             delay: 0.2,
             type: "spring",
             stiffness: 100,
-          }} 
+          }}
         >
-          V-PRAYUKTI
+          ECE & BIOMEDICAL PRESENTS
         </motion.span>
         <motion.span
-          className=""
+          className=" mb-5 text-secondary tracking-widest text-wrap"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -46,31 +46,19 @@ function HeroSection() {
             stiffness: 100,
           }}
         >
-          INNOVATION
+          V-PRAYUKTI
         </motion.span>
         <motion.span
-        className="text-secondary"
+          className=""
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          BEGINS
-        </motion.span>
-        <motion.span
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          HERE
-        </motion.span>
-        <motion.span
-          className="text-secondary"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.6,
+            type: "spring",
+            stiffness: 100,
+          }}
         >
           2025
         </motion.span>

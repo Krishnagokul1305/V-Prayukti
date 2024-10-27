@@ -1,4 +1,6 @@
 import { HiMiniPlay } from "react-icons/hi2";
+import { socialLinks } from "../constants/constants";
+import { voucher } from "../assets/index";
 
 function Footer() {
   return (
@@ -31,7 +33,7 @@ function Footer() {
                   <HiMiniPlay className="h-6" />
                 </span>
                 <a href="#" className="hover:text-orange-200">
-                 Whatsapp
+                  Whatsapp
                 </a>
               </li>
             </ul>
@@ -54,8 +56,8 @@ function Footer() {
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
                 </span>
-                <a href="#" className="hover:text-orange-200">
-                  Events
+                <a href={voucher} target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">
+                  Voucher
                 </a>
               </li>
               <li className="flex items-center">
@@ -63,7 +65,7 @@ function Footer() {
                   <HiMiniPlay className="h-6" />
                 </span>
                 <a href="#" className="hover:text-orange-200">
-                Accommodation
+                  Accommodation
                 </a>
               </li>
             </ul>
@@ -73,16 +75,13 @@ function Footer() {
             <div className="space-y-7">
               <div>
                 <h4 className="text-sm uppercase tracking-widest">Email</h4>
-                <a
-                  href="mailto:bitvprayukti@bitsathy.ac.in"
-                  className="hover:text-orange-200"
-                >
+                <a href={socialLinks.email} className="hover:text-orange-200">
                   bitvprayukti@bitsathy.ac.in
                 </a>
               </div>
               <div>
                 <h4 className="text-sm uppercase tracking-widest">Phone</h4>
-                <a href="tel:+6381137437" className="hover:text-orange-200">
+                <a href={socialLinks.phoneNo} className="hover:text-orange-200">
                   6381137437
                 </a>
               </div>

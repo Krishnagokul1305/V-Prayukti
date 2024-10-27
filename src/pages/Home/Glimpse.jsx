@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
+import { glimpseImg } from "../../constants/constants";
 
 function Glimpse() {
-  const row1 = [
-    "https://bitvprayukti.in/static/media/g1.911871089557adcd7799.jpg",
-    "https://bitvprayukti.in/static/media/g2.86f6ef1acee37bea2b33.jpg",
-    "https://bitvprayukti.in/static/media/g3.12cdb10930b204ae57bc.jpg",
-    "https://bitvprayukti.in/static/media/g6.c5b87adbcee50692e146.jpg",
-    "https://bitvprayukti.in/static/media/g7.388416e043dadb10f6b8.jpg",
-    "https://bitvprayukti.in/static/media/g8.15b308c4a65ac3bc6eb3.jpg",
-    "https://bitvprayukti.in/static/media/g9.c5b87adbcee50692e146.jpg",
-  ];
-
+ 
   const titleVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -66,7 +58,7 @@ function Glimpse() {
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-bg to-transparent pointer-events-none z-10"></div>
 
           <div className="flex space-x-8 animate-marquee">
-            {row1.concat(row1).map((el, index) => (
+            {glimpseImg.concat(glimpseImg).map((el, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 grid place-items-center w-64"

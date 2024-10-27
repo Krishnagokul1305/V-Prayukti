@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'avantn';
-  src: url('./assets/font/AVANTN.ttf') format('truetype');
+  font-family: "avantn";
+  src: url("./assets/font/AVANTN.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +12,6 @@
 body {
   font-family: "avantn", sans-serif, serif;
   font-size: calc(1.88679vw);
-  /* transition: all 0.5s ease; */
 }
 
 ::-webkit-scrollbar {
@@ -30,10 +29,8 @@ body {
   background-clip: content-box;
 }
 
-/* 
-.comingsoon{
-  background: url("./assets/images/earthHalf.png") no-repeat bottom center; 
-   filter: grayscale(100%);
-} */
-
-  
+.glowing-text {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
