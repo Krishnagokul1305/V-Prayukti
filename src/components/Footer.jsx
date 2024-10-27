@@ -57,7 +57,7 @@ function Footer() {
                   <HiMiniPlay className="h-6" />
                 </span>
                 <a href={voucher} target="_blank" rel="noopener noreferrer" className="hover:text-orange-200">
-                  Voucher
+                  Brochure
                 </a>
               </li>
               <li className="flex items-center">

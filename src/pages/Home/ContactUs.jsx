@@ -68,7 +68,7 @@ const ContactUs = () => {
             {contactData.map((data, index) => (
               <TiltCard key={data.title}>
                 <motion.div
-                  className="w-72 h-64 shadow-secondary  rounded-xl p-7 border border-secondary"
+                  className="w-72 md:72 h-64 shadow-secondary  rounded-xl p-7 border border-secondary"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -81,7 +81,7 @@ const ContactUs = () => {
                   }}
                 >
                   <span className="inline-block p-3 text-accent rounded-full bg-secondary">
-                    <data.Icon className="text-bg" />
+                    <data.Icon className="text-bg text-lg" />
                   </span>
                   <h2 className="mt-4 text-lg font-bold text-white">
                     {data.title}

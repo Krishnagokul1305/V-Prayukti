@@ -23,7 +23,7 @@ const navItems = [
   { name: "Competitions", link: "#competitions" },
   { name: "Workshops", link: "#workshops" },
   { name: "Accommodation", link: "#accommodation" },
-  { name: "voucher", link: voucher },
+  { name: "Brochure", link: voucher },
 ];
 
 const glimpseImg = [

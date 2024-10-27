@@ -9,7 +9,7 @@ function Link({ link, Icon }) {
       whileHover={{ scale: 1.1 }}
     >
       <a href={link} className="link-style" rel="noreferrer" target="_blank">
-        <Icon className="h-6" />
+        <Icon className="h-[1.5vw]" />
       </a>
     </motion.div>
   );
