@@ -88,7 +88,7 @@ const events = [
     deadline: "27th January 2025",
     fee: "Rs. 499/-",
     description:
-      "Join the exciting 'Capture the Flag' event and put your hacking skills to the test! Compete against other participants in a series of challenging puzzles and cybersecurity tasks. Race against the clock to uncover hidden flags and solve complex problems. Showcase your expertise in ethical hacking and problem-solving as you strive to outsmart your opponents!",
+      "Unleash your inner cyber detective and embark on a journey through the fascinating realms of ethical hacking, digital forensics, cryptography, and system exploitation.Whether you're a seasoned hacker sharpening your expertise or a curious beginner exploring the thrilling universe of cybersecurity, this CTF promises to test your problem-solving abilities and strategic thinking like never before. Get ready to tackle adrenaline-pumping challenges, decode mysteries, and conquer the digital battlefield in an electrifying competitive environment.",
   },
   {
     title: "line-follower",
