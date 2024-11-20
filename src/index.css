@@ -11,7 +11,18 @@
 
 body {
   font-family: "avantn", sans-serif, serif;
+  background-color: black;
+  color: #b7ab98;
   font-size: calc(1.88679vw);
+  scroll-behavior: smooth;
+}
+.event-hero {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.989)),
+    url("./assets/images/Designer.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 ::-webkit-scrollbar {
@@ -33,4 +44,80 @@ body {
   perspective: 800px;
   transform-style: preserve-3d;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.gradient {
+  background: rgb(18, 18, 24);
+  background: linear-gradient(0deg, rgb(2, 2, 2) 0%, rgba(0, 0, 0, 0.477) 65%);
+}
+
+.card-picture {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
+  clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
+}
+
+.button {
+  z-index: 1;
+  position: relative;
+  outline: none;
+  background-color: transparent;
+}
+
+.button::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eb5939;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+.loader-wrapper {
+  width: 3.75em;
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: #eb5939;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
 }

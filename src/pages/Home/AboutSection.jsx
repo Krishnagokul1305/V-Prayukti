@@ -7,7 +7,7 @@ function AboutSection() {
   };
 
   return (
-    <div className="flex flex-col w-[80%] mx-auto  py-32">
+    <div className="flex flex-col w-[80%] mx-auto  py-32" id="about">
       <motion.h1
         className="text-start font-thin text-2xl tracking-widest"
         variants={textVariants}

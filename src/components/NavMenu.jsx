@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { navItems, socialLinks } from "../constants/constants";
+import { socialLinks } from "../constants/constants";
+import { Link } from "react-router-dom";
 
 function NavMenu({ setMenuOpen }) {
   const variants = {
@@ -17,23 +18,50 @@ function NavMenu({ setMenuOpen }) {
       transition={{ duration: 0.5 }}
     >
       <div className="flex justify-end">
-        <button
+        <div
           onClick={() => setMenuOpen(false)}
           className="text-white text-sm hover:text-gray-400 transition duration-300"
         >
           CLOSE
-        </button>
+        </div>
       </div>
       <div className="flex flex-col space-y-6 w-fit">
-        {navItems.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            className="hover:italic  hover:text-gray-100 transition duration-300"
-          >
-            {item.name}
-          </a>
-        ))}
+        <Link
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className="hover:italic hover:text-gray-100 transition duration-300"
+        >
+          Home
+        </Link>
+        <Link
+          to="/events"
+          onClick={() => setMenuOpen(false)}
+          className="hover:italic hover:text-gray-100 transition duration-300"
+        >
+          Events
+        </Link>
+        <a
+          href="#about"
+          onClick={() => setMenuOpen(false)}
+          className="hover:italic hover:text-gray-100 transition duration-300"
+        >
+          About
+        </a>
+        <a
+          href="#contact"
+          onClick={() => setMenuOpen(false)}
+          className="hover:italic hover:text-gray-100 transition duration-300"
+        >
+          Contact Us
+        </a>
+
+        <a
+          href="#glimpse"
+          onClick={() => setMenuOpen(false)}
+          className="hover:italic hover:text-gray-100 transition duration-300"
+        >
+          Glimpse
+        </a>
       </div>
       <div className="flex space-x-3 text-sm text-gray-500">
         <p className="hover:text-gray-400 transition duration-300 italic">
@@ -42,7 +70,7 @@ function NavMenu({ setMenuOpen }) {
         <div className="space-x-3">
           <span>/ </span>
           <a
-            onClick={()=>window.open(socialLinks.instagram)}
+            onClick={() => window.open(socialLinks.instagram)}
             className="hover:italic hover:text-gray-400 transition duration-300"
           >
             Instagram

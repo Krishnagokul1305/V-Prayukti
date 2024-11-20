@@ -1,9 +1,8 @@
-import { voucher } from "../assets";
+import { Link } from "react-router-dom";
 
 function Press() {
   return (
-    <div className="fixed bottom-10 z-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-      {/* Rotating Ring */}
+    <div className="fixed bottom-10 z-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
       <div className="animate-spin-slow">
         <img
           src="https://minhpham.design/assets/icons/ic-text-ring.svg"
@@ -12,13 +11,13 @@ function Press() {
         />
       </div>
       {/* Static Icon */}
-      <a className="absolute" href={voucher} target="_blank" rel="noopener noreferrer">
+      <Link to="/events" className="absolute">
         <img
           src="https://minhpham.design/assets/icons/ic-touch.svg"
           alt="Touch Icon"
           className="w-5 h-5"
         />
-      </a>
+      </Link>
     </div>
   );
 }

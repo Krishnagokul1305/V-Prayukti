@@ -34,7 +34,10 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-[60vh] w-full flex items-center flex-col justify-center py-20">
+    <div
+      className="min-h-[60vh] w-full flex items-center flex-col justify-center py-20"
+      id="contact"
+    >
       <motion.h2
         className="font-medium text-xl tracking-wider mb-6 text-primary uppercase border-b border-b-secondary pb-1"
         initial="hidden"
@@ -68,7 +71,7 @@ const ContactUs = () => {
             {contactData.map((data, index) => (
               <TiltCard key={data.title}>
                 <motion.div
-                  className="w-72 md:72 h-64 shadow-secondary  rounded-xl p-7 border border-secondary"
+                  className="w-72  h-64 shadow-secondary  rounded-xl p-[2vw] border border-secondary"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -83,10 +86,10 @@ const ContactUs = () => {
                   <span className="inline-block p-3 text-accent rounded-full bg-secondary">
                     <data.Icon className="text-bg text-lg" />
                   </span>
-                  <h2 className="mt-4 text-lg font-bold text-white">
+                  <h2 className="mt-4 text-lg md:text-[1.1vw] font-bold text-white">
                     {data.title}
                   </h2>
-                  <p className="mt-2 text-base font-semibold">
+                  <p className="mt-2 text-base font-semibold md:text-[0.9vw]">
                     {data.description}
                   </p>
                 </motion.div>
