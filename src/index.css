@@ -19,7 +19,7 @@ body {
 .event-hero {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.989)),
-    url("./assets/images/Designer.jpeg");
+    url("./assets/images/Designer1.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -5,13 +5,14 @@ function EventsCard({ img, title }) {
   return (
     <div className=" border-secondary border-[0.01px] w-full hover:translate-y-[-10px] transition-all  md:max-w-[17rem] rounded-md overflow-hidden">
       <div className="relative ">
-        <div className="relative card-picture  md:h-[270px] bg-transparent p-2">
+        <div className="relative card-picture  md:h-[270px] md:min-w-[250px] min-h-[100px] bg-transparent p-2">
           <img
             src={img}
             alt={title}
             className="card__picture-img  h-100 "
             loading="lazy"
           />
+          <p className="text-lg text-center absolute">{title}</p>
         </div>
       </div>
 

@@ -5,13 +5,13 @@ import { HiCurrencyRupee } from "react-icons/hi2";
 import { HiMiniCalendarDays } from "react-icons/hi2";
 import InfoCard from "../../components/InfoCard";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 function EventPage() {
   const params = useParams();
   const event = events.find((event) => event.title === params.event);
   const navigate = useNavigate();
 
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -33,6 +33,10 @@ function EventPage() {
       transition: { duration: 0.4, ease: "easeOut" },
     },
   };
+
+  function handleClick(){
+    toast("Opens on 16th December!");
+  }
 
   return (
     <motion.div
@@ -78,6 +82,7 @@ function EventPage() {
           <div className="mt-6 flex items-center gap-4 text-lg">
             {/* Register Button */}
             <a
+              onClick={handleClick}
               href="#"
               className="px-6 py-3 bg-secondary font-semibold rounded-full hover:bg-opacity-80 text-white"
             >
