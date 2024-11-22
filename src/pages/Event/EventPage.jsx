@@ -40,7 +40,7 @@ function EventPage() {
 
   return (
     <motion.div
-      className="pt-24 pb-10 space-y-5 text-xl min-h-screen md:px-20 w-[90%] m-auto mb-10 flex flex-col justify-center"
+      className="pt-24 pb-10 space-y-5 text-lg min-h-screen md:px-20 w-[90%] md:text-xl m-auto mb-10 flex flex-col justify-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }} // Ensures animation triggers when 10% of the element is in view
@@ -79,7 +79,7 @@ function EventPage() {
             {event.title}
           </h1>
           <p className="mt-4 text-gray-300 ">{event.description}</p>
-          <div className="mt-6 flex items-center gap-4 text-lg">
+          <div className="mt-6 flex items-center gap-4 text-base">
             {/* Register Button */}
             <a
               onClick={handleClick}

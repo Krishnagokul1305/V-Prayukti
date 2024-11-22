@@ -14,6 +14,7 @@ function HeroSection() {
         src={
           "https://cdn.pixabay.com/video/2021/06/27/79153-568252359_large.mp4"
         }
+        controls={false}
         autoPlay
         loop
         muted

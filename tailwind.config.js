@@ -9,8 +9,8 @@ export default {
         bg: "#0d0d0d",
       },
       animation: {
-        "spin-slow": "spin 8s linear infinite",
-        marquee: "marquee 30s linear infinite",
+        "spin-slow": "spin 10s linear infinite",
+        marquee: "marquee 15s linear infinite",
       },
 
       keyframes: {

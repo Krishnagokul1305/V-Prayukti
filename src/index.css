@@ -121,3 +121,8 @@ circle {
     stroke-dashoffset: -125px;
   }
 }
+
+video::-webkit-media-controls {
+  display: none !important;
+  visibility: hidden !important;
+}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function Link({ link, Icon }) {
   return (
     <motion.div
-      className="flex items-center p-1.5 w-fit rounded-full hover:text-bg"
+      className="flex items-center p-1.5 w-fit rounded-full hover:text-bg hover:bg-secondary cursor-pointer"
       whileHover={{ scale: 1.1 }}
     >
       <a href={link} className="link-style" rel="noreferrer" target="_blank">

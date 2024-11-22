@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { HiClipboardList } from "react-icons/hi";
 
 function Press() {
   return (
-    <div className="fixed bottom-10 z-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+    <Link to={"/events"} className="fixed bottom-10 z-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
       <div className="animate-spin-slow">
         <img
           src="https://minhpham.design/assets/icons/ic-text-ring.svg"
@@ -11,14 +12,15 @@ function Press() {
         />
       </div>
       {/* Static Icon */}
-      <Link to="/events" className="absolute">
-        <img
+      <div className="absolute text-secondary">
+        {/* <img
           src="https://minhpham.design/assets/icons/ic-touch.svg"
           alt="Touch Icon"
           className="w-5 h-5"
-        />
-      </Link>
-    </div>
+        /> */}
+        <HiClipboardList className="w-5 h-5" />
+      </div>
+    </Link>
   );
 }
 

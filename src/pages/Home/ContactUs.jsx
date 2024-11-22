@@ -89,7 +89,7 @@ const ContactUs = () => {
                   <h2 className="mt-4 text-lg md:text-[1.1vw] font-bold text-white">
                     {data.title}
                   </h2>
-                  <p className="mt-2 text-base font-semibold md:text-[0.9vw]">
+                  <p className="mt-2 text-base font-semibold">
                     {data.description}
                   </p>
                 </motion.div>

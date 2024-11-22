@@ -1,10 +1,11 @@
 import { HiMiniPlay } from "react-icons/hi2";
-import { socialLinks } from "../constants/constants";
+import { linksData, socialLinks } from "../constants/constants";
 import { voucher } from "../assets/index";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="text-primary py-20 px-10 md:px-20">
+    <footer className="text-primary py-20 px-10 md:px-20 pb-24">
       <div className="container md:mx-auto px-6 w-[90%] font-semibold text-lg md:text-[1.5vw]">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="flex flex-col mb-6 md:mb-0">
@@ -16,18 +17,23 @@ function Footer() {
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
                 </span>
-                <a href="#" className="hover:text-orange-200">
+                <a
+                  href={linksData[1].link}
+                  className="hover:text-orange-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Instagram
                 </a>
               </li>
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
                 </span>
                 <a href="#" className="hover:text-orange-200">
                   Youtube
                 </a>
-              </li>
+              </li> */}
               <li className="flex items-center">
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
@@ -48,9 +54,9 @@ function Footer() {
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
                 </span>
-                <a href="#" className="hover:text-orange-200">
+                <Link to={"/"} className="hover:text-orange-200">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="flex items-center">
                 <span className="text-orange-500 mr-2">
