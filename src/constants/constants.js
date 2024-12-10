@@ -25,11 +25,7 @@ export const linksData = [
   {
     Icon: HiCamera,
     link: "https://www.instagram.com/vprayuktibit/",
-  },
-  {
-    Icon: HiOutlinePhone,
-    link: "https://wa.me/6381137437",
-  },
+  }
 ];
 
 const glimpseImg = [

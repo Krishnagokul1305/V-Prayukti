@@ -13,7 +13,8 @@ const ContactUs = () => {
     {
       Icon: HiPhone,
       title: "Phone",
-      description: "Any doubts?, Our friendly team is here to help 6381137437",
+      description:
+        "Any doubts?,Our friendly team is here, Contact individual coordinators of the events",
     },
     {
       Icon: HiLocationMarker,

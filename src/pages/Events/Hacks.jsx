@@ -1,8 +1,7 @@
 import EventsCard from "../../components/EventsCard";
 import { motion } from "framer-motion";
-import { events } from "../../constants/constants";
 
-function Hacks() {
+function Hacks({events}) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -14,7 +13,7 @@ function Hacks() {
     },
   };
 
-  const hackathons = events.filter((event) => event.type === "hackathon");
+  const hackathons = events.filter((event) => event.type === "Hackathons");
 
   return (
     <div className="h-auto w-full p-5 md:px-10 py-20" id="events">
@@ -36,7 +35,7 @@ function Hacks() {
           viewport={{ once: true }}
         >
           {hackathons.map((event) => (
-            <EventsCard img={event.img} title={event.title} key={event.title} />
+            <EventsCard img={event.image_url} title={event.name} key={event.name} id={event.id}/>
           ))}
         </motion.div>
       </div>

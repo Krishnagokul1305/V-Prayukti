@@ -10,7 +10,7 @@ function HeroSection() {
   return (
     <div className="relative h-screen flex justify-center items-center home">
       <video
-        className="absolute inset-0 w-full h-full object-cover grayscale"
+        className="absolute inset-0 w-full h-full object-cover"
         src={
           "https://cdn.pixabay.com/video/2021/06/27/79153-568252359_large.mp4"
         }
@@ -20,9 +20,9 @@ function HeroSection() {
         muted
         playsInline
       />
-      <div className="relative flex flex-col md:text-[9vw] text-5xl font-semibold text-center w-[80%] text-primary">
+      <div className="relative  flex flex-col md:text-[9vw] text-5xl font-semibold text-center w-[80%] text-primary">
         <motion.span
-          className="text-sm mb-5 tracking-widest"
+          className="text-sm mb-5 tracking-widest leading-relaxed"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -33,6 +33,8 @@ function HeroSection() {
             stiffness: 100,
           }}
         >
+          Bannari Amman Institute of Technology
+          <br />
           ECE & BIOMEDICAL PRESENTS
         </motion.span>
         <motion.span

@@ -16,6 +16,7 @@ body {
   font-size: calc(1.88679vw);
   scroll-behavior: smooth;
 }
+
 .event-hero {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.989)),
@@ -125,4 +126,35 @@ circle {
 video::-webkit-media-controls {
   display: none !important;
   visibility: hidden !important;
+}
+
+.eventsbg {
+  position: relative;
+}
+
+.eventsbg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    at center,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgb(0, 0, 0) 60%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.list ol {
+  list-style-type: disc; /* Ensure disc style for all nested lists */
+  margin-left: 1.25rem; /* Adjust spacing (equivalent to Tailwind's pl-5) */
 }

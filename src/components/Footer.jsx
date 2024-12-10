@@ -85,12 +85,12 @@ function Footer() {
                 </a>
               </div>
               <div>
-                <h4 className="text-sm uppercase tracking-widest md:text-[1vw]">
-                  Phone
+                {/* <h4 className="text-sm uppercase tracking-widest md:text-[1vw]">
+                  Developed By
                 </h4>
-                <a href={socialLinks.phoneNo} className="hover:text-orange-200">
-                  6381137437
-                </a>
+                <h1 className="hover:text-orange-200">
+                  GokulKrishnan.K <br /> Premnath.S.V
+                </h1> */}
               </div>
             </div>
           </div>

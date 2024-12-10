@@ -5,6 +5,11 @@ import ScrollToTop from "./components/ScrollToTop";
 import EventPage from "./pages/Event/EventPage";
 import FallBackLoader from "./components/FallBackLoader";
 import { lazy, Suspense } from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallBack from "./components/ErrorFallBack";
+import ThankYou from "./pages/ThankYou/ThankYou";
 
 const EventsPage = lazy(() => import("./pages/Events/EventsPage"));
 
@@ -21,18 +26,63 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: (
-          <Suspense fallback={<FallBackLoader />}>
-            <EventsPage />
-          </Suspense>
+          <ErrorBoundary
+            FallbackComponent={ErrorFallBack}
+            onReset={() => (window.location.href = "/")}
+          >
+            <Suspense fallback={<FallBackLoader />}>
+              <EventsPage />
+            </Suspense>
+          </ErrorBoundary>
         ),
       },
-      { path: "/events/:event", element: <EventPage /> },
+      {
+        path: "/events/:id",
+        element: (
+          <ErrorBoundary
+            FallbackComponent={ErrorFallBack}
+            onReset={() => (window.location.href = "/events")}
+          >
+            <EventPage />
+          </ErrorBoundary>
+        ),
+      },
+      {
+        path: "/register/thankyou/:id",
+        element: (
+          <ErrorBoundary
+            FallbackComponent={ErrorFallBack}
+            onReset={() => (window.location.href = "/events")}
+          >
+            <ThankYou />
+          </ErrorBoundary>
+        ),
+      },
     ],
   },
 ]);
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5,
+      cacheTime: 1000 * 60 * 10,
+      refetchOnWindowFocus: false,
+      retry: 1,
+      onError: (error) => {
+        console.error("Query Error:", error);
+      },
+    },
+  },
+});
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;

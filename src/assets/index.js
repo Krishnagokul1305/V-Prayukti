@@ -14,6 +14,7 @@ import themePhotography from "./images/theme-photo.jpeg";
 import masterMind from "./images/master-mind.jpeg";
 import seriesQuiz from "./images/series-quiz.jpeg";
 import connexions from "./images/connexions.jpeg";
+import eventsBg from "./videos/eventsbg.mp4"
 
 export {
   logo,
@@ -32,4 +33,5 @@ export {
   connexions,
   seriesQuiz,
   masterMind,
+  eventsBg
 };
