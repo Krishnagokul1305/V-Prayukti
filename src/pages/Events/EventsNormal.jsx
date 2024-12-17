@@ -14,8 +14,8 @@ export default function EventsNormal({ events }) {
     );
   } else if (filterType === "non-technical") {
     filtered = events.filter((event) => event.type === "Non Technical");
-  } else {
-    filtered = events;
+  } else if (filterType === "hackathons") {
+    filtered = events.filter((event) => event.type === "Hackathons");
   }
 
   return (

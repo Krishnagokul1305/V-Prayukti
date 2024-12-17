@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import EventsNormal from "./EventsNormal";
-import Hacks from "./Hacks";
 import { getAllEvents } from "../../services/apiEvent";
 import FallBackLoader from "../../components/FallBackLoader";
+import Combos from "./Combos";
 function Events() {
   const { data, isLoading } = useQuery({
     queryKey: ["events"],
@@ -12,7 +12,7 @@ function Events() {
   return (
     <>
       <EventsNormal events={data} />
-      <Hacks events={data}/>
+      <Combos/>
     </>
   );
 }

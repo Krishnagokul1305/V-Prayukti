@@ -1,14 +1,16 @@
 export const registerEvent = async (data) => {
   try {
+    console.log(data);
     const formData = new FormData();
 
     for (const key in data) {
       if (key === "payment_proof" && data[key]) {
-        formData.append("proof_of_payment_url", data.payment_proof);
+        formData.append("proof_of_payment_url", data?.payment_proof);
       } else {
         formData.append(key, data[key]);
       }
     }
+
     const res = await fetch(
       `https://dev.kayteegee.in/v-prayukti/api/register`,
       {

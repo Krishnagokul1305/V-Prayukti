@@ -38,7 +38,7 @@ function Glimpse() {
           }}
           variants={titleVariants}
         >
-          V-PRAYUKTI’23
+          V-PRAYUKTI’24
         </motion.h3>
 
         <motion.div
@@ -54,6 +54,7 @@ function Glimpse() {
           }}
           variants={titleVariants}
         >
+          
           <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-bg to-transparent pointer-events-none z-10"></div>
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-bg to-transparent pointer-events-none z-10"></div>
 

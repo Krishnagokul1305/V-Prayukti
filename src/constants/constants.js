@@ -4,6 +4,13 @@ import {
   aimlHackathon,
   captureFlag,
   connexions,
+  g1,
+  g2,
+  g3,
+  g4,
+  g5,
+  g6,
+  g7,
   iotHackathon,
   lineFollower,
   masterMind,
@@ -29,13 +36,13 @@ export const linksData = [
 ];
 
 const glimpseImg = [
-  "https://bitvprayukti.in/static/media/g1.911871089557adcd7799.jpg",
-  "https://bitvprayukti.in/static/media/g2.86f6ef1acee37bea2b33.jpg",
-  "https://bitvprayukti.in/static/media/g3.12cdb10930b204ae57bc.jpg",
-  "https://bitvprayukti.in/static/media/g6.c5b87adbcee50692e146.jpg",
-  "https://bitvprayukti.in/static/media/g7.388416e043dadb10f6b8.jpg",
-  "https://bitvprayukti.in/static/media/g8.15b308c4a65ac3bc6eb3.jpg",
-  "https://bitvprayukti.in/static/media/g9.c5b87adbcee50692e146.jpg",
+  g1,
+  g2,
+  g3,
+  g4,
+  g5,
+  g6,
+  g7,
 ];
 
 const socialLinks = {

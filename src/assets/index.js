@@ -14,7 +14,15 @@ import themePhotography from "./images/theme-photo.jpeg";
 import masterMind from "./images/master-mind.jpeg";
 import seriesQuiz from "./images/series-quiz.jpeg";
 import connexions from "./images/connexions.jpeg";
-import eventsBg from "./videos/eventsbg.mp4"
+import eventsBg from "./videos/eventsbg.mp4";
+
+import g1 from "./glimpse/BIT_5490.jpg";
+import g2 from "./glimpse/BIT_5910.jpg";
+import g3 from "./glimpse/DSC_0320.jpg";
+import g4 from "./glimpse/DSC_0324.jpeg";
+import g5 from "./glimpse/DSC_0393.jpg";
+import g6 from "./glimpse/DSC00483 (1).jpg";
+import g7 from "./glimpse/IMG_6722.jpeg";
 
 export {
   logo,
@@ -33,5 +41,12 @@ export {
   connexions,
   seriesQuiz,
   masterMind,
-  eventsBg
+  eventsBg,
+  g1,
+  g2,
+  g3,
+  g4,
+  g5,
+  g6,
+  g7,
 };

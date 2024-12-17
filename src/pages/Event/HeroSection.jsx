@@ -6,9 +6,10 @@ import List from "../../components/List";
 import { transformToCoordinators } from "../../utils/helper";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function HeroSection({ event, setCondition, isAgreed }) {
-console.log(event)
+  console.log(event);
   useEffect(() => {
     if (event.name == "Workshop") {
       toast.error("Opens on 18th Dec");
@@ -39,7 +40,9 @@ console.log(event)
     },
   };
 
-  const coordinators = transformToCoordinators(event?.student_contacts)
+  const navigate = useNavigate();
+
+  const coordinators = transformToCoordinators(event?.student_contacts);
 
   return (
     <motion.div
@@ -76,38 +79,50 @@ console.log(event)
             {event?.introduction}
           </motion.p>
         </motion.div>
-
-        {isAgreed ? (
+        <div className="space-x-2">
+          {isAgreed ? (
+            <motion.button
+              className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
+              disabled={event?.name === "Workshop"}
+              onClick={() => {
+                const params = new URLSearchParams({
+                  name: event?.name,
+                  teamSize: event?.team_count,
+                  id: event?.id,
+                });
+                navigate(`/register?${params.toString()}`);
+              }}
+            >
+              Click Here to Register
+            </motion.button>
+          ) : (
+            <Modal>
+              <Modal.Open>
+                <motion.button
+                  className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
+                  variants={itemVariants}
+                  disabled={event?.name === "Workshop"}
+                >
+                  Register Now
+                </motion.button>
+              </Modal.Open>
+              <Modal.Window>
+                <List setAgree={setCondition} rules={event.rulebook_url} />
+              </Modal.Window>
+            </Modal>
+          )}
           <motion.button
+            variants={itemVariants}
             className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
-            disabled={event?.name === "Workshop"}
             onClick={() =>
               document
-                .getElementById("register")
+                .getElementById("details")
                 .scrollIntoView({ behavior: "smooth" })
             }
           >
-            Click Here to Register
+            Learn More
           </motion.button>
-        ) : (
-          <Modal>
-            <Modal.Open>
-              <motion.button
-                className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
-                variants={itemVariants}
-                disabled={event?.name === "Workshop"}
-              >
-                Register Now
-              </motion.button>
-            </Modal.Open>
-            <Modal.Window>
-              <List
-                setAgree={setCondition}
-                rules={event.rulebook_url}
-              />
-            </Modal.Window>
-          </Modal>
-        )}
+        </div>
       </div>
       <Coordinators coordinators={coordinators} />
     </motion.div>

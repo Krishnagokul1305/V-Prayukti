@@ -16,7 +16,7 @@ function Coordinators({ coordinators }) {
   };
 
   return (
-    <div className="text-white absolute bottom-5 left-5 space-y-2 z-10">
+    <div className="text-white absolute bottom-5 left-5 md:left-10 space-y-2 z-10">
       <div className="rounded-lg space-y-2">
         <AnimatePresence>
           {open &&

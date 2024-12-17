@@ -8,7 +8,7 @@ const ContactUs = () => {
       Icon: HiOutlineMail,
       title: "Email",
       description:
-        "Our friendly team is here to help. Instead Whatsapp bitvprayukti@bitsathy.ac.in",
+        "Our friendly team is here to help. mail us bitvprayukti@bitsathy.ac.in",
     },
     {
       Icon: HiPhone,

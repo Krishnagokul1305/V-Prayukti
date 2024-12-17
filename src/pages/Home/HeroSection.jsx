@@ -22,7 +22,7 @@ function HeroSection() {
       />
       <div className="relative  flex flex-col md:text-[9vw] text-5xl font-semibold text-center w-[80%] text-primary">
         <motion.span
-          className="text-sm mb-5 tracking-widest leading-relaxed"
+          className="text-sm md:text-base mb-5 tracking-widest leading-relaxed"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -35,7 +35,7 @@ function HeroSection() {
         >
           Bannari Amman Institute of Technology
           <br />
-          ECE & BIOMEDICAL PRESENTS
+          ECE & BME PRESENTS
         </motion.span>
         <motion.span
           className=" mb-5 text-secondary tracking-widest text-wrap"

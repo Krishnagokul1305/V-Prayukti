@@ -17,7 +17,7 @@ function Filter() {
   };
 
   return (
-    <div className="flex items-center gap-5 px-1 text-white py-1 border border-secondary rounded-full text-sm xs:text-base md:text-[1.5vw]">
+    <div className="flex items-center gap-1 px-1 text-white py-1 border border-secondary rounded-full text-xs xs:text-sm md:text-[1.2vw]">
       <div
         className={`px-5 py-3 rounded-full cursor-pointer transition-colors duration-300 ${
           activeFilter === "technical" ? "bg-secondary" : ""
@@ -33,6 +33,14 @@ function Filter() {
         onClick={() => handleFilterChange("non-technical")}
       >
         Non-Technical
+      </div>
+      <div
+        className={`px-5 py-3 rounded-full cursor-pointer transition-colors duration-300 ${
+          activeFilter === "hackathons" ? "bg-secondary" : ""
+        }`} 
+        onClick={() => handleFilterChange("hackathons")}
+      >
+        Hacks
       </div>
     </div>
   );

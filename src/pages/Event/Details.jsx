@@ -34,29 +34,34 @@ function Details({ event }) {
     },
     {
       title: "Team size",
-      content: `${event.team_count} persons per team`,
+      content: `${event.team_count}`,
     },
     {
       title: "Registration fee",
-      content: `${event.fee} per team`,
+      content: `${event.fee} ${event.id == 13 ? "per head" : "per team"}`,
     },
-    {
+    { 
       title: "Rules and Regulations",
       content: event.rulebook_url,
     },
+    {
+      title: "mode of participation",
+      content: event?.domain ? event.domain : "offline",
+    },
   ];
 
-  if(event?.info){
+  if (event?.info) {
     items.push({
-      title:"Important Dates",
+      title: "Important Dates",
       content: event.info,
-    })
+    });
   }
 
   return (
     <motion.div
       className="flex flex-col items-center mb-20 min-h-[40vh] md:space-y-10"
       initial="hidden"
+      id="details"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
@@ -64,10 +69,7 @@ function Details({ event }) {
       <motion.h1 className="text-xl md:text-3xl" variants={itemVariants}>
         Registration Details
       </motion.h1>
-      <motion.div
-        className="w-full max-w-5xl"
-        variants={itemVariants} // Animate Accordion as a whole
-      >
+      <motion.div className="w-full max-w-5xl" variants={itemVariants}>
         <Accordion items={items} />
       </motion.div>
     </motion.div>

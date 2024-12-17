@@ -14,7 +14,7 @@ const AccountDetails = () => {
   };
 
   return (
-    <div className="max-w-sm mx-5 md:mx-auto bg-secondary shadow-lg rounded-lg p-6 border border-gray-300/50">
+    <div className="max-w-sm mx-5 md:mx-auto bg-secondary shadow-lg rounded-lg p-6 border h-fit md:mt-20 mt-10 md:sticky md:top-20 border-gray-300/50">
       <h2 className="text-lg font-bold text-center mb-4 text-gray-800">
         ACCOUNT DETAILS
       </h2>

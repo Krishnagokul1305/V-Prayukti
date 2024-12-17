@@ -16,7 +16,7 @@ const EventLineUp = () => {
           EVENTS LINEUP
         </motion.h1>
 
-        <Link to="/events" className="text-base">
+        <Link to="/events" className="text-lg">
           <motion.span
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

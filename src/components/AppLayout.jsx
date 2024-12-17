@@ -4,7 +4,8 @@ import Footer from "./Footer.jsx";
 
 export default function AppLayout() {
   const path = useLocation().pathname;
-  const isMatching = /^\/events\/.+$/g.test(path);
+  console.log(path);
+  const isMatching = /^\/events\/.+$/g.test(path) || path == "/register";
 
   return (
     <div className="max-w-9xl">

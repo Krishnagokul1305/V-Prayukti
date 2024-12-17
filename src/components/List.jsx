@@ -5,9 +5,12 @@ function List({ onClose, setAgree, rules }) {
   }
   return (
     <div className="mt-3">
-      <div dangerouslySetInnerHTML={{ __html: rules }} className="list text-xl"></div>
+      <div
+        dangerouslySetInnerHTML={{ __html: rules }}
+        className="list text-xl"
+      ></div>
       <button
-        className="px-8 text-xl py-3 mt-3 rounded-full bg-secondary overflow-hidden text-white ms-auto block"
+        className="px-8 text-xl py-2 mt-3 rounded-full bg-secondary overflow-hidden text-white ms-auto block"
         onClick={() => handleAgree()}
       >
         Agree

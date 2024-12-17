@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallBack from "./components/ErrorFallBack";
 import ThankYou from "./pages/ThankYou/ThankYou";
+import RegisterPage from "./pages/Register/RegisterPage";
 
 const EventsPage = lazy(() => import("./pages/Events/EventsPage"));
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             <EventPage />
           </ErrorBoundary>
         ),
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
       },
       {
         path: "/register/thankyou/:id",

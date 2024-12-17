@@ -40,3 +40,9 @@ export function transformToCoordinators(input) {
     })
     .filter(({ name, phoneNo }) => name && phoneNo); 
 }
+
+export function parseEventDetails(input) {
+  if (!input) return [];
+  const parts = input.split("+").map((part) => part.trim());
+  return parts;
+}

@@ -27,3 +27,19 @@ export const getEvent = async (id) => {
     throw error;
   }
 };
+
+export const getCombos=async ()=>{
+  try {
+    const res = await fetch(
+      `https://dev.kayteegee.in/v-prayukti/api/combos`
+    );
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+    const { data } = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

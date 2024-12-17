@@ -12,7 +12,7 @@ function ThankYou() {
   });
 
   if (isLoading) return <FallBackLoader />;
-  // console.log(data);
+  console.log(data);
   const registrationDetails = [
     { label: "Application ID", value: data.application_id },
     { label: "Event ID", value: data.event_id },

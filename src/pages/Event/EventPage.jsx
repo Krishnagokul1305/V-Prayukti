@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import Details from "./Details";
-import Register from "./Register";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getEvent } from "../../services/apiEvent";
 import FallBackLoader from "../../components/FallBackLoader";
-import AccountDetails from "./AccountDetails";
+import WorkshopList from "./WorkshopList";
 
 function EventPage() {
   const params = useParams();
@@ -27,8 +26,9 @@ function EventPage() {
         setCondition={setApprove}
         isAgreed={conditionsAccepted}
       />
+      {data.id == 9 && <WorkshopList />}
       <Details event={data} />
-      <div id="register">
+      {/* <div id="register">
         {conditionsAccepted && (
           <>
             <AccountDetails />
@@ -39,7 +39,7 @@ function EventPage() {
             />
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
