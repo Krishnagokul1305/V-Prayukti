@@ -31,18 +31,35 @@ export function convertMembersToTeamMembersFormat(members) {
 }
 
 export function transformToCoordinators(input) {
-  if(!input) return [];
+  if (!input) return [];
   return input
-    .split("\n") 
+    .split("\n")
     .map((line) => {
-      const [name, phoneNo] = line.split(" - ").map((part) => part.trim()); 
-      return { name, phoneNo }; 
+      const [name, phoneNo] = line.split(" - ").map((part) => part.trim());
+      return { name, phoneNo };
     })
-    .filter(({ name, phoneNo }) => name && phoneNo); 
+    .filter(({ name, phoneNo }) => name && phoneNo);
 }
 
 export function parseEventDetails(input) {
   if (!input) return [];
   const parts = input.split("+").map((part) => part.trim());
   return parts;
+}
+
+export function createOrderedList(input) {
+  // Split the input by newline characters
+  const items = input.split("\n");
+
+  // Generate the HTML <ol> structure
+  let ol = "<ol>\n";
+  items.forEach((item) => {
+    // Trim whitespace and skip empty lines
+    if (item.trim()) {
+      ol += `  <li>${item.trim()}</li>\n`;
+    }
+  });
+  ol += "</ol>";
+
+  return ol;
 }

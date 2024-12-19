@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Accordion from "../../components/Accordion";
+import { createOrderedList } from "../../utils/helper";
 
 function Details({ event }) {
   const containerVariants = {
@@ -10,7 +11,7 @@ function Details({ event }) {
       transition: {
         duration: 0.5,
         ease: "easeOut",
-        staggerChildren: 0.2, // Stagger child animations
+        staggerChildren: 0.2,
       },
     },
   };
@@ -40,20 +41,24 @@ function Details({ event }) {
       title: "Registration fee",
       content: `${event.fee} ${event.id == 13 ? "per head" : "per team"}`,
     },
-    { 
+    {
       title: "Rules and Regulations",
       content: event.rulebook_url,
     },
     {
-      title: "mode of participation",
-      content: event?.domain ? event.domain : "offline",
+      title: "Mode of Participation",
+      content: event?.domain
+        ? event.domain
+        : event.id == 9
+        ? "Hybrid"
+        : "Offline",
     },
   ];
 
   if (event?.info) {
     items.push({
       title: "Important Dates",
-      content: event.info,
+      content: createOrderedList(event.info),
     });
   }
 

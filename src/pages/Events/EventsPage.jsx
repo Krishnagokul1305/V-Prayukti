@@ -12,7 +12,6 @@ export default function EventsPage() {
       <Suspense fallback={<FallBackLoader />}>
         <Events />
       </Suspense>
-      
     </div>
   );
 }

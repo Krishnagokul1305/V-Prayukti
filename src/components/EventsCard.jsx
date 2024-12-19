@@ -12,11 +12,11 @@ function EventsCard({ img, title,id }) {
             className="card__picture-img  h-100 "
             loading="lazy"
           />
-          <p className="text-lg text-center absolute">{title}</p>
+          <p className="text-lg text-center absolute top-10 -z-10">{title}</p>
         </div>
       </div>
 
-      <div className="p-5 flex items-center justify-between">
+      <div className="p-3 flex items-center justify-between">
         <button
           className="button w-full px-5 py-3 border flex items-center border-secondary rounded-full text-white text-lg gap-5 hover:before:bg-redborder-red-500 relative overflow-hidden bg-transparent transition-all "
           onClick={() => navigate(`/events/${id}`)}

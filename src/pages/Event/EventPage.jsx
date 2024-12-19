@@ -28,18 +28,6 @@ function EventPage() {
       />
       {data.id == 9 && <WorkshopList />}
       <Details event={data} />
-      {/* <div id="register">
-        {conditionsAccepted && (
-          <>
-            <AccountDetails />
-            <Register
-              name={data.name}
-              teamSize={data.team_count}
-              id={data.id}
-            />
-          </>
-        )}
-      </div> */}
     </div>
   );
 }

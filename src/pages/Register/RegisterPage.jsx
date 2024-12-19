@@ -1,12 +1,43 @@
+import { motion } from "framer-motion";
 import AccountDetails from "./AccountDetails";
 import RegisterForm from "./RegisterForm";
 
 function RegisterPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Stagger the animations of children
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start faded out and slightly below
+    visible: { opacity: 1, y: 0 }, // Fade in and move to normal position
+  };
+
   return (
-    <div className="md:grid flex flex-col-reverse md:grid-cols-[3fr_1fr] mt-10 py-10 md:px-5">
-      <RegisterForm />
-      <AccountDetails />
-    </div>
+    <motion.div
+      className="md:grid flex flex-col-reverse md:grid-cols-[3fr_1fr] mt-10 py-10 md:px-5"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div
+        variants={itemVariants}
+        transition={{ type: "spring", stiffness: 50 }}
+      >
+        <RegisterForm />
+      </motion.div>
+      <motion.div
+        variants={itemVariants}
+        transition={{ type: "spring", stiffness: 50, delay: 0.3 }}
+      >
+        <AccountDetails />
+      </motion.div>
+    </motion.div>
   );
 }
 

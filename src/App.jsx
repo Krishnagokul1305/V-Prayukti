@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             onReset={() => (window.location.href = "/")}
           >
             <Suspense fallback={<FallBackLoader />}>
-              <EventsPage />
+              <EventsPage />  
             </Suspense>
           </ErrorBoundary>
         ),
@@ -74,9 +74,6 @@ const queryClient = new QueryClient({
       cacheTime: 1000 * 60 * 10,
       refetchOnWindowFocus: false,
       retry: 1,
-      onError: (error) => {
-        console.error("Query Error:", error);
-      },
     },
   },
 });

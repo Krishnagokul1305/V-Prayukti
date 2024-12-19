@@ -12,8 +12,7 @@ function ThankYou() {
   });
 
   if (isLoading) return <FallBackLoader />;
-  console.log(data);
-  const registrationDetails = [
+  let registrationDetails = [
     { label: "Application ID", value: data.application_id },
     { label: "Event ID", value: data.event_id },
     { label: "Team Leader Name", value: data.team_leader_name },
@@ -24,12 +23,18 @@ function ThankYou() {
     { label: "College", value: data.team_leader_college },
     { label: "Team Name", value: data.team_name },
     { label: "Team Count", value: data.team_count },
-    { label: "Transaction Amount", value: data.transaction_amount },
-    { label: "Payment Status", value: data.payment_status },
     { label: "Arrival Status", value: data.arrival_status },
     { label: "Registered At", value: data.registered_at },
-    { label: "Transaction ID", value: data.transaction_id },
   ];
+
+  if (data.event_id != 1) {
+    registrationDetails = [
+      ...registrationDetails,
+      { label: "Transaction ID", value: data.transaction_id },
+      { label: "Transaction Amount", value: data.transaction_amount },
+      { label: "Payment Status", value: data.payment_status },
+    ];
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 py-20">

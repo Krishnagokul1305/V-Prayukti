@@ -18,8 +18,6 @@ function RegisterForm() {
   const teamSize = searchParams.get("teamSize");
   const id = searchParams.get("id");
 
-  console.log(name, teamSize, id);
-
   const {
     register,
     handleSubmit,
@@ -38,7 +36,7 @@ function RegisterForm() {
       toast.success("Registered successfully 🎉");
       navigate(`/register/thankyou/${data.application_id}`);
     },
-    onError: (error) => {
+    onError: () => {
       toast.error("Something went wrong");
     },
   });
@@ -55,7 +53,7 @@ function RegisterForm() {
   };
 
   const onSubmit = (data) => {
-    if (id!=1&&!data?.payment_proof) {
+    if (id != 1 && !data?.payment_proof) {
       toast.error("Payment proof is required");
       return;
     }
@@ -65,7 +63,7 @@ function RegisterForm() {
       event_id: id,
       payment_proof: data?.payment_proof,
       transaction_amount: data?.transaction_amount || 0.01,
-      transaction_id: data?.transaction_id || '0',
+      transaction_id: data?.transaction_id || "0",
     };
     if (data?.team_count && Data?.team_count > 1) {
       Data.team_members = convertMembersToTeamMembersFormat(data.members);
@@ -75,7 +73,7 @@ function RegisterForm() {
 
   return (
     <div>
-      <div className="max-w-6xl mt-5 md:mt-0 mb-10 p-4 md:p-10 mx-auto">
+      <div className="max-w-6xl mt-5 md:mt-0 mb-10 p-5 md:p-10 mx-auto">
         <h1 className="text-lg md:text-2xl text-secondary">Join the event</h1>
         <h2 className="text-3xl md:text-[3vw] font-semibold mt-2">{name}</h2>
         <form
@@ -111,7 +109,7 @@ function RegisterForm() {
               placeholder="Enter the department"
               errors={errors}
             />
-            <InputField
+            {/* <InputField
               label="Year"
               name="team_leader_year"
               type="number"
@@ -119,6 +117,12 @@ function RegisterForm() {
               validation={{ required: "Year is required" }}
               placeholder="Enter the year"
               errors={errors}
+            /> */}
+            <SelectField
+              label="Team Leader Year"
+              name="team_leader_year"
+              options={Array.from({ length: 4 }, (_, i) => i + 1)}
+              register={register}
             />
             <InputField
               label="Phone Number"
@@ -139,16 +143,26 @@ function RegisterForm() {
           </div>
 
           {maxCount > 1 && (
-            <SelectField
-              label="Team Members Count"
-              name="team_count"
-              options={Array.from(
-                { length: maxCount - minCount + 1 },
-                (_, i) => i + minCount
-              )}
-              register={register}
-              onChange={handleTeamCountChange}
-            />
+            <div className="grid md:grid-cols-2 gap-7">
+              <SelectField
+                label="Team Members Count"
+                name="team_count"
+                options={Array.from(
+                  { length: maxCount - minCount + 1 },
+                  (_, i) => i + minCount
+                )}
+                register={register}
+                onChange={handleTeamCountChange}
+              />
+              <InputField
+                label="Team Name"
+                name="team_name"
+                register={register}
+                validation={{ required: "Team name is required" }}
+                placeholder="Enter team name"
+                errors={errors}
+              />
+            </div>
           )}
 
           {teamCount > 0 && (

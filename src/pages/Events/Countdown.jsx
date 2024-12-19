@@ -6,7 +6,6 @@ export default function Countdown() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
-
   return (
     <div className="min-h-[50vh] text-center py-10 space-y-7 flex flex-col justify-center items-center">
       <motion.h1

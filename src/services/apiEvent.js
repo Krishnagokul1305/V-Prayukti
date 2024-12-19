@@ -28,10 +28,10 @@ export const getEvent = async (id) => {
   }
 };
 
-export const getCombos=async ()=>{
+export const getWorkShops = async () => {
   try {
     const res = await fetch(
-      `https://dev.kayteegee.in/v-prayukti/api/combos`
+      `https://dev.kayteegee.in/v-prayukti/api/workshops`
     );
     if (!res.ok) {
       throw new Error("Something went wrong");
@@ -42,4 +42,18 @@ export const getCombos=async ()=>{
     console.log(error);
     throw error;
   }
-}
+};
+
+export const getCombos = async () => {
+  try {
+    const res = await fetch(`https://dev.kayteegee.in/v-prayukti/api/combos`);
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+    const { data } = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

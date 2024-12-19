@@ -10,7 +10,7 @@ export default function EventsNormal({ events }) {
 
   if (filterType === "technical") {
     filtered = events.filter(
-      (event) => event.type === "Technical" || event.type === "Workshops"
+      (event) => event.type === "Technical"
     );
   } else if (filterType === "non-technical") {
     filtered = events.filter((event) => event.type === "Non Technical");
@@ -39,7 +39,7 @@ export default function EventsNormal({ events }) {
           <Filter />
         </motion.div>
         <motion.div
-          className="flex flex-wrap items-center gap-10 justify-center w-full px-5 lg:grid lg:grid-cols-4 lg:w-fit"
+          className="flex flex-wrap items-center gap-10 justify-center w-full px-5 lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:w-fit"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

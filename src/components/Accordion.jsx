@@ -45,7 +45,8 @@ const Accordion = ({ items }) => {
             }`}
           >
             <div className="p-4 ms-1 text-lg">
-              {item.title === "Rules and Regulations" ? (
+              {item.title === "Rules and Regulations" ||
+              item.title === "Important Dates" ? (
                 // Render as HTML for rulebook URL
                 <div
                   dangerouslySetInnerHTML={{ __html: item.content }}

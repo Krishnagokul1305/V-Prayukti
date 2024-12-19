@@ -21,8 +21,6 @@ function Combos() {
     };
   });
 
-  console.log(data);
-
   return (
     <div className=" min-h-screen  max-w-7xl mx-auto mt-20 py-10">
       <h1 className="text-center text-xl font-bold text-secondary tracking-wider mb-4">

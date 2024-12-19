@@ -1,6 +1,15 @@
-function List({ onClose, setAgree, rules }) {
+import { useNavigate } from "react-router-dom";
+
+function List({ onClose, setAgree, rules, event }) {
+  const navigate = useNavigate();
   function handleAgree() {
     setAgree(true);
+    const params = new URLSearchParams({
+      name: event?.name,
+      teamSize: event?.team_count,
+      id: event?.id,
+    });
+    navigate(`/register?${params.toString()}`);
     onClose();
   }
   return (
@@ -13,7 +22,7 @@ function List({ onClose, setAgree, rules }) {
         className="px-8 text-xl py-2 mt-3 rounded-full bg-secondary overflow-hidden text-white ms-auto block"
         onClick={() => handleAgree()}
       >
-        Agree
+        Agree & Proceed
       </button>
     </div>
   );

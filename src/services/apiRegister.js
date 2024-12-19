@@ -1,6 +1,5 @@
 export const registerEvent = async (data) => {
   try {
-    console.log(data);
     const formData = new FormData();
 
     for (const key in data) {

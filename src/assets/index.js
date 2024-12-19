@@ -1,6 +1,7 @@
 import logo from "./images/logo.png";
 import landerBg from "./videos/bg.mp4";
-import voucher from "./images/voucher.png";
+import voucher1 from "./images/voucher1.jpg";
+import voucher2 from "./images/voucher2.jpg";
 import paperPresentation from "./images/paper-present.jpg";
 import lineFollower from "./images/line-follower.jpeg";
 import productExpo from "./images/product-expo.jpeg";
@@ -27,7 +28,6 @@ import g7 from "./glimpse/IMG_6722.jpeg";
 export {
   logo,
   landerBg,
-  voucher,
   paperPresentation,
   lineFollower,
   productExpo,
@@ -42,6 +42,8 @@ export {
   seriesQuiz,
   masterMind,
   eventsBg,
+  voucher1,
+  voucher2,
   g1,
   g2,
   g3,

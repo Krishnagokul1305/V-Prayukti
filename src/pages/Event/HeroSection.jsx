@@ -4,18 +4,9 @@ import Coordinators from "../../components/Coordinators";
 import Modal from "../../components/Modal";
 import List from "../../components/List";
 import { transformToCoordinators } from "../../utils/helper";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function HeroSection({ event, setCondition, isAgreed }) {
-  console.log(event);
-  useEffect(() => {
-    if (event.name == "Workshop") {
-      toast.error("Opens on 18th Dec");
-    }
-  }, [event.name]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -96,20 +87,26 @@ function HeroSection({ event, setCondition, isAgreed }) {
               Click Here to Register
             </motion.button>
           ) : (
-            <Modal>
-              <Modal.Open>
-                <motion.button
-                  className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
-                  variants={itemVariants}
-                  disabled={event?.name === "Workshop"}
-                >
-                  Register Now
-                </motion.button>
-              </Modal.Open>
-              <Modal.Window>
-                <List setAgree={setCondition} rules={event.rulebook_url} />
-              </Modal.Window>
-            </Modal>
+            event.id != 9 && (
+              <Modal>
+                <Modal.Open>
+                  <motion.button
+                    className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
+                    variants={itemVariants}
+                    disabled={event?.name === "Workshop"}
+                  >
+                    Register Now
+                  </motion.button>
+                </Modal.Open>
+                <Modal.Window>
+                  <List
+                    setAgree={setCondition}
+                    rules={event.rulebook_url}
+                    event={event}
+                  />
+                </Modal.Window>
+              </Modal>
+            )
           )}
           <motion.button
             variants={itemVariants}

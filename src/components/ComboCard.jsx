@@ -2,14 +2,14 @@ import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const TicketCard = ({ id, title, amount, details, size }) => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   function handleClick() {
-      const params = new URLSearchParams({
-        name: title,
-        teamSize:"1-4",
-        id,
-      });
-      navigate(`/register?${params.toString()}`);
+    const params = new URLSearchParams({
+      name: title,
+      teamSize: "Hybrid",
+      id,
+    });
+    navigate(`/register?${params.toString()}`);
   }
   return (
     <div className=" flex flex-col h-full relative bg-accent bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-[0.1] border-secondary border-2 rounded-3xl px-14 pb-5 duration-500 mb-12 text-center text-lg active">
@@ -32,7 +32,7 @@ const TicketCard = ({ id, title, amount, details, size }) => {
       </h2>
 
       <h2 className="ticket-price text-lg text-white font-semibold tracking-wide leading-[1] my-5">
-        Team Size : <span className="text-white">{size}</span>
+        Mode : <span className="text-white">{size}</span>
       </h2>
 
       <div className="ticket-pricing-table-details">
