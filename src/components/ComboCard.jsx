@@ -44,10 +44,10 @@ const TicketCard = ({ id, title, amount, details, size }) => {
       </div>
 
       <button
-        className="button w-4/5 mt-auto mx-auto rounded-full border border-secondary py-2 px-5 overflow-hidden text-xl text-white/80  hover:text-white"
+        className="button w-4/5 mt-auto justify-center flex items-center mx-auto rounded-full border border-secondary py-2 px-5 overflow-hidden text-sm xs:text-base md:text-xl text-white/80  hover:text-white"
         onClick={handleClick}
       >
-        Get Ticket <FaArrowRight className="inline-block ml-2" />
+        Get Ticket <FaArrowRight className=" ml-2" />
       </button>
     </div>
   );

@@ -6,6 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getEvent } from "../../services/apiEvent";
 import FallBackLoader from "../../components/FallBackLoader";
 import WorkshopList from "./WorkshopList";
+import ProblemStatementsAiml from "./ProblemStatementsAiml";
+import ProblemStatementsIot from "./ProblemStatementsIot";
 
 function EventPage() {
   const params = useParams();
@@ -27,6 +29,8 @@ function EventPage() {
         isAgreed={conditionsAccepted}
       />
       {data.id == 9 && <WorkshopList />}
+      {data.name == "AIML Hackathon" && <ProblemStatementsAiml />}
+      {data.name == "IOT Hackathon" && <ProblemStatementsIot />}
       <Details event={data} />
     </div>
   );
