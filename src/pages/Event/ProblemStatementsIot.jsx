@@ -39,7 +39,7 @@ function ProblemStatementsIot() {
   ];
 
   return (
-    <div className="p-5 mx-auto max-w-6xl min-h-screen">
+    <div className="p-5 mx-auto max-w-6xl min-h-screen md:mt-10">
       <h1 className="text-xl md:text-4xl font-bold text-gold uppercase tracking-wider mb-10 items-center gap-2 flex flex-col md:flex-row">
         Problem Statements <span className="md:text-lg text-base">(Themes but not limited)</span>
       </h1>

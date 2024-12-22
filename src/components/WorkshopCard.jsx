@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { parseRequirements } from "../utils/helper";
 
-function WorkshopCard({ event ,variants}) {
+function WorkshopCard({ event, variants }) {
   const navigate = useNavigate();
-
+  const requirements = parseRequirements(event.eligibility).software;
   return (
     <motion.div
-      className="bg-black text-white border border-secondary/70 rounded-lg overflow-hidden shadow-md p-2"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      className="bg-black text-white h-full border border-secondary/70 rounded-lg overflow-hidden shadow-md p-2 transition-all hover:-translate-y-2"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }} 
       variants={variants}
     >
       <div className="relative rounded-lg overflow-hidden text-lg">
@@ -17,7 +18,7 @@ function WorkshopCard({ event ,variants}) {
       </div>
 
       <div className="px-2 py-3 text-lg flex items-center justify-between">
-        <h3 className="truncate ">{event.name}</h3>
+        <h3 className="truncate">{event.name}</h3>
         <button
           className="bg-secondary hover:bg-secondary/90 px-3 py-1 rounded-full"
           onClick={() => {
@@ -25,6 +26,7 @@ function WorkshopCard({ event ,variants}) {
               name: event?.name,
               teamSize: event?.team_count,
               id: event?.id,
+              fee: "Rs.199/-",
             });
             navigate(`/register?${params.toString()}`);
           }}
@@ -32,6 +34,10 @@ function WorkshopCard({ event ,variants}) {
           Register
         </button>
       </div>
+      <footer className="bg-stone900/90 rounded-lg px-3 py-2 text-lg flex items-center">
+        <h1 className="text-secondary">#Requirements:</h1>
+        <p className="text-base ms-2">{requirements}</p>
+      </footer>
     </motion.div>
   );
 }

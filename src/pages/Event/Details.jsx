@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Accordion from "../../components/Accordion";
-import { createOrderedList } from "../../utils/helper";
+import { createOrderedList, transformToCoordinators } from "../../utils/helper";
+import { HiQuestionMarkCircle } from "react-icons/hi";
 
 function Details({ event }) {
   const containerVariants = {
@@ -22,7 +23,7 @@ function Details({ event }) {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.2,
         ease: "easeOut",
       },
     },
@@ -30,28 +31,8 @@ function Details({ event }) {
 
   const items = [
     {
-      title: "Event Deadline",
-      content: `Ends on ${event.deadline}`,
-    },
-    {
-      title: "Team size",
-      content: `${event.team_count}`,
-    },
-    {
-      title: "Registration fee",
-      content: `${event.fee} ${event.id == 13 ? "per head" : "per team"}`,
-    },
-    {
       title: "Rules and Regulations",
       content: event.rulebook_url,
-    },
-    {
-      title: "Mode of Participation",
-      content: event?.domain
-        ? event.domain
-        : event.id == 9
-        ? "Hybrid"
-        : "Offline",
     },
   ];
 
@@ -60,21 +41,36 @@ function Details({ event }) {
       title: "Important Dates",
       content: createOrderedList(event.info),
     });
+    items.reverse()
   }
-
+  const coordinators = transformToCoordinators(event?.student_contacts);
   return (
     <motion.div
-      className="flex flex-col items-center mb-20 min-h-[40vh] md:space-y-10"
+      className="flex flex-col items-center min-h-[40vh] md:space-y-5"
       initial="hidden"
       id="details"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
       <motion.h1 className="text-xl md:text-3xl" variants={itemVariants}>
         Registration Details
       </motion.h1>
       <motion.div className="w-full max-w-5xl" variants={itemVariants}>
+        <div className="border border-secondary p-3 rounded-2xl my-3 opacity-90 mx-5 md:me-6">
+          <button className="w-full flex justify-between items-center p-4 transition">
+            <span className="text-lg font-medium flex items-center gap-2">
+              <HiQuestionMarkCircle /> For Queries
+            </span>
+          </button>
+          <div className="px-4 py-2 ms-5 text-lg md:text-xl ">
+            <ul className="list-disc">
+              {coordinators.map((c, i) => (
+                <li key={i} className="">{c}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
         <Accordion items={items} />
       </motion.div>
     </motion.div>

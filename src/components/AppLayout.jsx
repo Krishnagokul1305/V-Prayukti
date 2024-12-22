@@ -4,11 +4,10 @@ import Footer from "./Footer.jsx";
 
 export default function AppLayout() {
   const path = useLocation().pathname;
-  const isMatching = /^\/events\/.+$/g.test(path) || path == "/register";
+  const isMatching = path.includes("/register");
 
   return (
     <div className="max-w-9xl">
-      {/* {!isMatching && ( */}
       <header>
         <Navbar />
       </header>

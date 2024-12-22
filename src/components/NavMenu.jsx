@@ -40,13 +40,14 @@ function NavMenu({ setMenuOpen }) {
         >
           Events
         </Link>
-        <a
-          href="#about"
+        <Link
+          to="/register/search"
           onClick={() => setMenuOpen(false)}
           className="hover:italic hover:text-gray-100 transition duration-300"
         >
-          About
-        </a>
+          Your Registrations
+        </Link>
+       
         <a
           href="#contact"
           onClick={() => setMenuOpen(false)}

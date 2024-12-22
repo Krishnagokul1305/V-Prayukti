@@ -13,7 +13,7 @@ function ProblemStatementsAiml() {
     ];
   
     return (
-      <div className="p-5 mx-auto max-w-6xl bg-black min-h-screen">
+      <div className="p-5 mx-auto max-w-6xl bg-black min-h-screen md:mt-10">
         <h1 className="text-xl md:text-4xl font-bold text-gold uppercase tracking-wider mb-10">
           Problem Statements
         </h1>

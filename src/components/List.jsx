@@ -8,6 +8,8 @@ function List({ onClose, setAgree, rules, event }) {
       name: event?.name,
       teamSize: event?.team_count,
       id: event?.id,
+      type:event?.type,
+      fee:event?.fee
     });
     navigate(`/register?${params.toString()}`);
     onClose();

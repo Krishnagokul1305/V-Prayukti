@@ -11,8 +11,10 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallBack from "./components/ErrorFallBack";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import RegisterPage from "./pages/Register/RegisterPage";
+import PageNotFound from "./pages/4O4/PageNotFound";
 
 const EventsPage = lazy(() => import("./pages/Events/EventsPage"));
+const SearchPage = lazy(() => import("./pages/search/SearchPage"));
 
 const router = createBrowserRouter([
   {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
             onReset={() => (window.location.href = "/")}
           >
             <Suspense fallback={<FallBackLoader />}>
-              <EventsPage />  
+              <EventsPage />
             </Suspense>
           </ErrorBoundary>
         ),
@@ -63,7 +65,19 @@ const router = createBrowserRouter([
           </ErrorBoundary>
         ),
       },
+      {
+        path: "/register/search",
+        element: (
+          <Suspense fallback={<FallBackLoader />}>
+            <SearchPage />
+          </Suspense>
+        ),
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 
@@ -81,7 +95,6 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
       <RouterProvider router={router} />
     </QueryClientProvider>
   );

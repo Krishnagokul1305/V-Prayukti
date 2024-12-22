@@ -32,13 +32,7 @@ export function convertMembersToTeamMembersFormat(members) {
 
 export function transformToCoordinators(input) {
   if (!input) return [];
-  return input
-    .split("\n")
-    .map((line) => {
-      const [name, phoneNo] = line.split(" - ").map((part) => part.trim());
-      return { name, phoneNo };
-    })
-    .filter(({ name, phoneNo }) => name && phoneNo);
+  return input.split("\n");
 }
 
 export function parseEventDetails(input) {
@@ -62,4 +56,12 @@ export function createOrderedList(input) {
   ol += "</ol>";
 
   return ol;
+}
+
+export function parseRequirements(requirementString) {
+  const [hardware, software] = requirementString.split("|");
+  return {
+    hardware: hardware.trim(),
+    software: software.trim(),
+  };
 }

@@ -9,9 +9,7 @@ export default function EventsNormal({ events }) {
   const filterType = searchParams.get("type") || "technical";
 
   if (filterType === "technical") {
-    filtered = events.filter(
-      (event) => event.type === "Technical"
-    );
+    filtered = events.filter((event) => event.type === "Technical");
   } else if (filterType === "non-technical") {
     filtered = events.filter((event) => event.type === "Non Technical");
   } else if (filterType === "hackathons") {
@@ -22,7 +20,7 @@ export default function EventsNormal({ events }) {
     <div className="h-auto w-full p-5 md:px-10 py-20" id="events">
       <div className="mx-auto flex flex-col justify-center items-center space-y-10">
         <motion.h1
-          className="font-bold text-secondary text-2xl md:text-[3vw] tracking-wider mb-4"
+          className="font-bold text-secondary flex flex-col text-2xl md:text-[3vw] tracking-wider mb-2 items-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -14,7 +14,7 @@ const ContactUs = () => {
       Icon: HiPhone,
       title: "Phone",
       description:
-        "Any doubts?,Our friendly team is here, Contact individual coordinators of the events",
+        "Any doubts?,Our friendly team is here, Contact coordinators of the events",
     },
     {
       Icon: HiLocationMarker,
@@ -90,7 +90,7 @@ const ContactUs = () => {
                   <h2 className="mt-4 text-lg md:text-[1.1vw] font-bold text-white">
                     {data.title}
                   </h2>
-                  <p className="mt-2 text-base font-semibold">
+                  <p className="mt-2 text-base md:text-[0.9vw] font-semibold">
                     {data.description}
                   </p>
                 </motion.div>

@@ -5,6 +5,7 @@ import Modal from "../../components/Modal";
 import List from "../../components/List";
 import { transformToCoordinators } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
+import DetailsBox from "../../components/DetailsBox";
 
 function HeroSection({ event, setCondition, isAgreed }) {
   const containerVariants = {
@@ -25,7 +26,7 @@ function HeroSection({ event, setCondition, isAgreed }) {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         ease: "easeOut",
       },
     },
@@ -33,11 +34,9 @@ function HeroSection({ event, setCondition, isAgreed }) {
 
   const navigate = useNavigate();
 
-  const coordinators = transformToCoordinators(event?.student_contacts);
-
   return (
     <motion.div
-      className="eventsbg relative space-y-5 text-lg min-h-screen md:text-xl flex items-center justify-center flex-col py-20"
+      className="eventsbg relative space-y-5 text-lg min-h-[75vh] md:text-xl flex items-center justify-center flex-col pt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -64,13 +63,24 @@ function HeroSection({ event, setCondition, isAgreed }) {
             {event?.name}
           </motion.h1>
           <motion.p
-            className="md:text-[1.5vw] tracking-wider leading-9"
+            className="md:text-[1.5vw] tracking-wider leading-8 md:leading-10"
             variants={itemVariants}
           >
             {event?.introduction}
           </motion.p>
         </motion.div>
-        <div className="space-x-2">
+        <div className="space-x-2 space-y-2">
+          <motion.button
+            variants={itemVariants}
+            className=" px-5 py-3 rounded-full hover:bg-secondary/80 bg-secondary overflow-hidden text-white"
+            onClick={() =>
+              document
+                .getElementById("details")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Details
+          </motion.button>
           {isAgreed ? (
             <motion.button
               className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
@@ -91,11 +101,11 @@ function HeroSection({ event, setCondition, isAgreed }) {
               <Modal>
                 <Modal.Open>
                   <motion.button
-                    className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
+                    className="button px-5 py-3  mb-10 rounded-full border border-secondary overflow-hidden hover:text-white"
                     variants={itemVariants}
                     disabled={event?.name === "Workshop"}
                   >
-                    Register Now
+                    Register Now {event.id != 1 ? "@ " + event?.fee : ""}
                   </motion.button>
                 </Modal.Open>
                 <Modal.Window>
@@ -108,20 +118,8 @@ function HeroSection({ event, setCondition, isAgreed }) {
               </Modal>
             )
           )}
-          <motion.button
-            variants={itemVariants}
-            className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
-            onClick={() =>
-              document
-                .getElementById("details")
-                .scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Learn More
-          </motion.button>
         </div>
       </div>
-      <Coordinators coordinators={coordinators} />
     </motion.div>
   );
 }

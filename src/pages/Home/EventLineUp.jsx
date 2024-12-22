@@ -18,7 +18,7 @@ const EventLineUp = () => {
           EVENTS LINEUP
         </motion.h1>
 
-        <Link to="/events" className="text-lg">
+        <Link to="/events" className="text-xl hover:text-secondary">
           <motion.span
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

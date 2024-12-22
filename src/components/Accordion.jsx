@@ -9,7 +9,7 @@ const Accordion = ({ items }) => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-5">
+    <div className="w-full max-w-5xl mx-auto px-5 mb-10">
       {items.map((item, index) => (
         <div
           key={index}
@@ -44,7 +44,7 @@ const Accordion = ({ items }) => {
               openIndex === index ? "max-h-auto" : "max-h-0"
             }`}
           >
-            <div className="p-4 ms-1 text-lg">
+            <div className="p-4 ms-1 md:text-xl text-lg">
               {item.title === "Rules and Regulations" ||
               item.title === "Important Dates" ? (
                 // Render as HTML for rulebook URL

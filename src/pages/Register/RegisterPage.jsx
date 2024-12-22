@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import AccountDetails from "./AccountDetails";
 import RegisterForm from "./RegisterForm";
+import { useSearchParams } from "react-router-dom";
 
 function RegisterPage() {
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -20,7 +23,7 @@ function RegisterPage() {
 
   return (
     <motion.div
-      className="md:grid flex flex-col-reverse md:grid-cols-[3fr_1fr] mt-10 py-10 md:px-5"
+      className={`md:grid flex flex-col-reverse ${id!=1&&"md:grid-cols-[3fr_1fr]"} mt-10 py-10 md:px-5`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -35,7 +38,7 @@ function RegisterPage() {
         variants={itemVariants}
         transition={{ type: "spring", stiffness: 50, delay: 0.3 }}
       >
-        <AccountDetails />
+        {id != 1 && <AccountDetails />}
       </motion.div>
     </motion.div>
   );

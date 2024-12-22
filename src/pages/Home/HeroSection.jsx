@@ -22,7 +22,7 @@ function HeroSection() {
       />
       <div className="relative  flex flex-col md:text-[9vw] text-5xl font-semibold text-center w-[80%] text-primary">
         <motion.span
-          className="text-sm md:text-base mb-5 tracking-widest leading-relaxed"
+          className="text-sm md:text-lg mb-5 tracking-widest leading-relaxed"
           variants={textVariants}
           initial="hidden"
           animate="visible"

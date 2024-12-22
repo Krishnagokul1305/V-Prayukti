@@ -12,7 +12,7 @@ const TicketCard = ({ id, title, amount, details, size }) => {
     navigate(`/register?${params.toString()}`);
   }
   return (
-    <div className=" flex flex-col h-full relative bg-accent bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-[0.1] border-secondary border-2 rounded-3xl px-14 pb-5 duration-500 mb-12 text-center text-lg active">
+    <div className="hover:-translate-y-2 flex flex-col h-full relative bg-accent bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-[0.1] border-secondary border-2 rounded-3xl px-14 pb-5 duration-500 mb-12 text-center text-lg active">
       <h6 className=" bg-secondary px-6 py-3 inline-block tracking-wide uppercase text-white font-bold text-xl rounded-b-md mb-3 leading-[1]">
         {title}
       </h6>

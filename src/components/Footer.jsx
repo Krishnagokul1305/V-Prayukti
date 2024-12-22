@@ -1,6 +1,7 @@
 import { HiMiniPlay } from "react-icons/hi2";
 import { linksData, socialLinks } from "../constants/constants";
 import { voucher1, voucher2 } from "../assets/index";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -12,6 +13,17 @@ function Footer() {
               Links
             </span>
             <ul className="space-y-5 md:space-y-[2vw]">
+            <li className="flex items-center">
+                <span className="text-orange-500 mr-2">
+                  <HiMiniPlay className="h-6" />
+                </span>
+                <Link
+                to={"/events"}
+                  className="hover:text-orange-200"
+                >
+                  Events
+                </Link>
+              </li>
               <li className="flex items-center">
                 <span className="text-orange-500 mr-2">
                   <HiMiniPlay className="h-6" />
@@ -37,6 +49,17 @@ function Footer() {
                 >
                   Brochure2
                 </a>
+              </li>
+              <li className="flex items-center">
+                <span className="text-orange-500 mr-2">
+                  <HiMiniPlay className="h-6" />
+                </span>
+                <Link
+                to={"/register/search"}
+                  className="hover:text-orange-200"
+                >
+                  Your Registrations
+                </Link>
               </li>
             </ul>
           </div>

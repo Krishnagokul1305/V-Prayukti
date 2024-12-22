@@ -4,12 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 function Coordinators({ coordinators }) {
   let [open, setIsopen] = useState(false);
 
-  // Variants for animation
   const itemVariants = {
     hidden: { opacity: 0, y: 50 }, // Start below the view
     visible: (i) => ({
       opacity: 1,
-      y: 0, // Move into position
+      y: 0, 
       transition: { delay: i * 0.2 }, // Delay based on index
     }),
     exit: { opacity: 0, y: -50 }, // Exit upwards
@@ -40,7 +39,7 @@ function Coordinators({ coordinators }) {
         </AnimatePresence>
       </div>
       <button
-        className="bg-secondary px-3 py-2 rounded-full"
+        className="bg-secondary md:px-[1.5vw] md:py-[0.8vw] md:text-[1.5vw] px-3 py-2 rounded-full"
         onClick={() => setIsopen(!open)}
       >
         Coordinators

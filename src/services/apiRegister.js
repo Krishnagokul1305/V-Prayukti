@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 export const registerEvent = async (data) => {
   try {
     const formData = new FormData();
@@ -11,7 +13,7 @@ export const registerEvent = async (data) => {
     }
 
     const res = await fetch(
-      `https://dev.kayteegee.in/v-prayukti/api/register`,
+      `https://vprayukti.kayteegee.in/api/register`,
       {
         method: "POST",
         body: formData,
@@ -31,7 +33,7 @@ export const registerEvent = async (data) => {
 export const getRegistration = async (id) => {
   try {
     const res = await fetch(
-      `https://dev.kayteegee.in/v-prayukti/api/register/${id}`
+      `https://vprayukti.kayteegee.in/api/register/${id.toUpperCase()}`
     );
     if (!res.ok) {
       throw new Error("Something went wrong");
@@ -39,7 +41,7 @@ export const getRegistration = async (id) => {
     const { data } = await res.json();
     return data;
   } catch (error) {
-    console.log(error);
+    toast.error("Something went wrong");
     throw error;
   }
 };

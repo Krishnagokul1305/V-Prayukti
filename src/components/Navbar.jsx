@@ -10,12 +10,20 @@ function Navbar() {
       <Link to="/">
         <img src={logo} alt="" className="md:h-[4vw] h-16" />
       </Link>
-      <h1
-        onClick={() => setMenuOpen(true)}
-        className="text-base md:text-[1.2vw] mb-4"
-      >
-        MENU
-      </h1>
+      <div className="flex items-center gap-5">
+        <Link
+          className="text-base md:text-[1.2vw] mb-4 hidden md:block"
+          to="/register/search"
+        >
+          REGISTRATIONS
+        </Link>
+        <h1
+          onClick={() => setMenuOpen(true)}
+          className="text-base md:text-[1.2vw] mb-4"
+        >
+          MENU
+        </h1>
+      </div>
       {menuOpen && <NavMenu setMenuOpen={setMenuOpen} />}
     </div>
   );

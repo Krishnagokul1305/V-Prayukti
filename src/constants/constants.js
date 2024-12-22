@@ -1,5 +1,5 @@
 import { HiOutlineMail } from "react-icons/hi";
-import { HiCamera } from "react-icons/hi2";
+import { FaInstagram } from "react-icons/fa6";
 import {
   g1,
   g2,
@@ -16,7 +16,7 @@ export const linksData = [
     link: "mailto:bitvprayukti@bitsathy.ac.in",
   },
   {
-    Icon: HiCamera,
+    Icon: FaInstagram,
     link: "https://www.instagram.com/vprayuktibit/",
   },
 ];

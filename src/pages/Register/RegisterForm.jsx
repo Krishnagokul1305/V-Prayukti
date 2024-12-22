@@ -17,6 +17,8 @@ function RegisterForm() {
   const name = searchParams.get("name");
   const teamSize = searchParams.get("teamSize");
   const id = searchParams.get("id");
+  const type = searchParams.get("type");
+  const fee = searchParams.get("fee");
 
   const {
     register,
@@ -28,10 +30,13 @@ function RegisterForm() {
   const navigate = useNavigate();
   const [minCount, maxCount] = teamSize.split("-").map(Number);
   const [teamCount, setTeamCount] = useState(minCount - 1);
-
   const { mutate, isPending } = useMutation({
     mutationFn: registerEvent,
     onSuccess: (data) => {
+      if (!data) {
+        toast.error("Something went wrong");
+        return;
+      }
       reset();
       toast.success("Registered successfully 🎉");
       navigate(`/register/thankyou/${data.application_id}`);
@@ -71,18 +76,29 @@ function RegisterForm() {
     mutate(Data);
   };
 
+  const isOne = maxCount == undefined && minCount == 1;
+
   return (
     <div>
       <div className="max-w-6xl mt-5 md:mt-0 mb-10 p-5 md:p-10 mx-auto">
         <h1 className="text-lg md:text-2xl text-secondary">Join the event</h1>
-        <h2 className="text-3xl md:text-[3vw] font-semibold mt-2">{name}</h2>
+        <h2 className="text-3xl md:text-[3vw] font-semibold mt-2">
+          {name}{" "}
+          {id != 1 && <span className="text-xl text-red-500 me-2">{fee}</span>}
+          <br />
+          <span className="text-lg text-red-500">
+            {type == "Non Technical" &&
+              "(#Must have Registered for atleast one technical event)"}
+          </span>
+        </h2>
+
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-7 bg-stone-900/50 p-3 md:p-5 text-lg mt-10 rounded-xl border border-secondary/20 shadow-sm"
         >
           <div className="grid md:grid-cols-2 gap-7">
             <InputField
-              label="Team Leader Name"
+              label={`${isOne ? "Name" : "Team Leader Name"}`}
               name="team_leader_name"
               register={register}
               validation={{ required: "Name is required" }}
@@ -90,7 +106,7 @@ function RegisterForm() {
               errors={errors}
             />
             <InputField
-              label="Team Leader Email"
+              label={`${isOne ? "Email" : "Team Leader Email"}`}
               name="team_leader_email"
               type="email"
               register={register}
@@ -109,17 +125,8 @@ function RegisterForm() {
               placeholder="Enter the department"
               errors={errors}
             />
-            {/* <InputField
-              label="Year"
-              name="team_leader_year"
-              type="number"
-              register={register}
-              validation={{ required: "Year is required" }}
-              placeholder="Enter the year"
-              errors={errors}
-            /> */}
             <SelectField
-              label="Team Leader Year"
+              label={`${isOne ? "Year" : "Team Leader Year"}`}
               name="team_leader_year"
               options={Array.from({ length: 4 }, (_, i) => i + 1)}
               register={register}
