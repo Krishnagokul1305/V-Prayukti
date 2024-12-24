@@ -30,14 +30,14 @@ function WorkshopList() {
   return (
     <div>
       <h1 className="ms-10 font-extrabold text-center text-2xl md:text-[3vw] flex flex-col md:flex-row justify-center items-center md:items-end gap-2 tracking-wider mb-4 md:mb-8">
-        Workshops <span className="text-lg text-red-500">(#Must bring Laptops)</span>
+        Workshops <span className="text-lg text-red-500">(#Laptop is mandatory)</span>
       </h1>
       <motion.div
         className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 max-w-7xl mx-auto"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible" // Trigger animation when in view
-        viewport={{ once: true, amount: 0.1 }} // Play animation only once when 20% of the component is in view
+        whileInView="visible" 
+        viewport={{ once: true, amount: 0.1 }}
       >
         {data?.map((eve) => (
           <motion.div key={eve.id} variants={itemVariants}>

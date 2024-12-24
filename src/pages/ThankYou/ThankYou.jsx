@@ -21,9 +21,10 @@ function ThankYou() {
           Thank You for Registering!
         </h1>
         <p className="text-center text-lg mb-6">
-          Your registration has been received. <span className="text-red-500">(&#35; Note your Application ID)</span> 
+          Your registration has been received.{" "}
+          <span className="text-red-500">(&#35; Note your Application ID)</span>
         </p>
-        <RegistrationDetails data={data}/>
+        <RegistrationDetails data={data} />
         <button
           onClick={() => navigate("/events")}
           className="ms-auto block py-2 px-4 bg-secondary text-lg text-white rounded-lg hover:bg-secondary/80 transition duration-200"

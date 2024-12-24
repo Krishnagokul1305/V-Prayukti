@@ -5,7 +5,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import EventPage from "./pages/Event/EventPage";
 import FallBackLoader from "./components/FallBackLoader";
 import { lazy, Suspense } from "react";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallBack from "./components/ErrorFallBack";

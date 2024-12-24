@@ -10,6 +10,8 @@ import FileUploader from "../../components/FileUploader";
 import { convertMembersToTeamMembersFormat } from "../../utils/helper";
 import { registerEvent } from "../../services/apiRegister";
 import { HiPaperAirplane } from "react-icons/hi";
+import ProblemSelectAiml from "../../components/ProblemSelectAIML";
+import ProblemSelectIOT from "../../components/ProblemSelectIOT";
 
 function RegisterForm() {
   const [searchParams] = useSearchParams();
@@ -56,6 +58,7 @@ function RegisterForm() {
     }));
     setValue("members", members);
   };
+
 
   const onSubmit = (data) => {
     if (id != 1 && !data?.payment_proof) {
@@ -179,6 +182,11 @@ function RegisterForm() {
               errors={errors}
             />
           )}
+          {name == "AIML Hackathon" && (
+            <ProblemSelectAiml register={register} />
+          )}
+          {name == "IOT Hackathon" && <ProblemSelectIOT register={register} setValue={setValue} errors={errors}/>}
+
           {id != 1 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10">
               <FileUploader

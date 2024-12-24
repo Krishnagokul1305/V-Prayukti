@@ -1,4 +1,4 @@
-function ProblemStatementsAiml() {
+function ProblemSelect({ register, errors, value }) {
   const problemStatements = [
     { id: 1, title: "Speech Emotion Recognition with librosa" },
     { id: 2, title: "Own Python compiler using Django" },
@@ -13,25 +13,32 @@ function ProblemStatementsAiml() {
   ];
 
   return (
-    <div className="p-5 mx-auto max-w-6xl bg-black min-h-screen md:mt-10">
-      <h1 className="text-xl md:text-4xl font-bold text-gold uppercase tracking-wider mb-10">
-        Problem Statements
-      </h1>
-      <ul className="rounded-xl mx-auto">
+    <div className="flex flex-col gap-2">
+      <label htmlFor="">Choose a Problem Statement</label>
+      <select
+        {...register("problem_statement", {
+          required: "Please select a problem statement",
+        })}
+        defaultValue={value}
+        className="rounded-lg w-full border border-secondary/10 bg-stone-800/50 px-4 py-4 focus:outline-none text-lg"
+      >
         {problemStatements.map((item) => (
-          <li
+          <option
             key={item.id}
-            className="flex flex-col md:items-center md:flex-row py-6 px-8 bg-stone-900/50 border-t hover:bg-secondary hover:text-white transition-all border-gray-500/20 text-crimson"
+            value={`AL-PS${item.id}`}
+            className="text-white"
           >
-            <span className="md:text-xl text-xl font-bold text-gold w-16">
-              {`AL-PS${item.id}`}
-            </span>
-            <div className="ml-6 md:text-2xl text-lg">{item.title}</div>
-          </li>
+            {item.title}
+          </option>
         ))}
-      </ul>
+      </select>
+      {errors?.problem_statement && (
+        <p className="text-red-500 text-sm mt-2">
+          {errors.problem_statement.message}
+        </p>
+      )}
     </div>
   );
 }
 
-export default ProblemStatementsAiml;
+export default ProblemSelect;

@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import { eventsBg } from "../../assets";
-import Coordinators from "../../components/Coordinators";
 import Modal from "../../components/Modal";
 import List from "../../components/List";
-import { transformToCoordinators } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
-import DetailsBox from "../../components/DetailsBox";
 
 function HeroSection({ event, setCondition, isAgreed }) {
   const containerVariants = {

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { socialLinks } from "../constants/constants";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function NavMenu({ setMenuOpen }) {
   const variants = {
@@ -47,22 +48,24 @@ function NavMenu({ setMenuOpen }) {
         >
           Your Registrations
         </Link>
-       
-        <a
-          href="#contact"
+
+        <HashLink
+          smooth
+          to="/#contact"
           onClick={() => setMenuOpen(false)}
           className="hover:italic hover:text-gray-100 transition duration-300"
         >
           Contact Us
-        </a>
+        </HashLink>
 
-        <a
-          href="#glimpse"
+        <HashLink
+          smooth
+          to="/#glimpse"
           onClick={() => setMenuOpen(false)}
           className="hover:italic hover:text-gray-100 transition duration-300"
         >
           Glimpse
-        </a>
+        </HashLink>
       </div>
       <div className="flex space-x-3 text-sm text-gray-500">
         <p className="hover:text-gray-400 transition duration-300 italic">

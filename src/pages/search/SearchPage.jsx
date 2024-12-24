@@ -30,7 +30,6 @@ function SearchPage() {
       toast.error("Please enter a valid application ID.");
       return;
     }
-
     setSubmitted(true);
     setIsLoading(true);
 

@@ -38,6 +38,8 @@ function ProblemStatementsIot() {
     },
   ];
 
+  let counter = 1;
+
   return (
     <div className="p-5 mx-auto max-w-6xl min-h-screen md:mt-10">
       <h1 className="text-xl md:text-4xl font-bold text-gold uppercase tracking-wider mb-10 items-center gap-2 flex flex-col md:flex-row">
@@ -56,11 +58,16 @@ function ProblemStatementsIot() {
               {category.name}
             </div>
             <ul className="ml-8 list-disc">
-              {category.problems.map((problem, index) => (
-                <li key={index} className="py-3">
-                  <span className="text-lg">{problem}</span>
-                </li>
-              ))}
+              {category.problems.map((problem, index) => {
+                const problemId = `IOT-PS${counter++}`;
+                return (
+                  <li key={index} className="py-3">
+                    <span className="text-lg">
+                      {problemId} - {problem}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </li>
         ))}

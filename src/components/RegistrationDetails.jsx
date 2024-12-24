@@ -49,6 +49,13 @@ function RegistrationDetails({ data }) {
     ];
   }
 
+  if (data?.problem_statement) {
+    registrationDetails.push({
+      label: "Problem Statement",
+      value: data.problem_statement,
+    });
+  }
+
   if (data?.status == "Rejected") {
     registrationDetails = [
       ...registrationDetails,

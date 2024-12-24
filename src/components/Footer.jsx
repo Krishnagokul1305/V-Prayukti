@@ -34,7 +34,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-orange-200"
                 >
-                  Brochure1
+                  Vprayukti 25&apos;
                 </a>
               </li>
               <li className="flex items-center">
@@ -47,7 +47,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-orange-200"
                 >
-                  Brochure2
+                  Vprayukti Hacks
                 </a>
               </li>
               <li className="flex items-center">
