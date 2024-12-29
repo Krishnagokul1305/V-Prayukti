@@ -1,7 +1,7 @@
 function ProblemStatementsAiml() {
   const problemStatements = [
     { id: 1, title: "Speech Emotion Recognition with librosa" },
-    { id: 2, title: "Own Python compiler using Django" },
+    { id: 2, title: "AI-Driven Resume Shortlisting for Hiring" },
     { id: 3, title: "AI for Detecting and Managing Personal Stress Levels" },
     { id: 4, title: "Turning Handwritten Documents into Digital documents" },
     { id: 5, title: "Stock price Prediction" },

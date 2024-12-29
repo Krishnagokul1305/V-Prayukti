@@ -71,9 +71,8 @@ function ProblemSelectIOT({ register, setValue, errors }) {
         className="rounded-lg w-full border border-secondary/10 bg-stone-800/50 px-4 py-4 focus:outline-none text-lg"
         onChange={handleProblemChange}
       >
-        <option>Select a Problem</option>
         {problems.map((problem) => (
-          <option key={problem.id} className="text-white" value={problem.id}>
+          <option key={problem.id} className="text-white bg-stone-900" value={problem.id}>
             {problem.statement}
           </option>
         ))}

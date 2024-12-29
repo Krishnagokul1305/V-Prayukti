@@ -8,7 +8,7 @@ function SelectField({ label, name, options, register, onChange }) {
         className="rounded-lg w-full border border-secondary/10 bg-stone-800/50 px-4 py-3 focus:outline-none text-lg"
       >
         {options.map((value) => (
-          <option key={value} value={value}>
+          <option key={value} className="bg-stone-900" value={value}>
             {value}
           </option>
         ))}

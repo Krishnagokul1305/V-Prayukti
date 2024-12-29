@@ -1,14 +1,6 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa6";
-import {
-  g1,
-  g2,
-  g3,
-  g4,
-  g5,
-  g6,
-  g7,
-} from "../assets/index";
+import { g1, g2, g3, g5, g7 } from "../assets/index";
 
 export const linksData = [
   {
@@ -21,7 +13,18 @@ export const linksData = [
   },
 ];
 
-const glimpseImg = [g1, g2, g3, g4, g5, g6, g7];
+const glimpseImg = [
+  g1,
+  "https://bitvprayukti.in/static/media/g7.388416e043dadb10f6b8.jpg",
+  g3,
+  "https://bitvprayukti.in/static/media/g2.86f6ef1acee37bea2b33.jpg",
+  g5,
+  "https://bitvprayukti.in/static/media/g11.5b119ff7e22c65953b77.jpg",
+  g7,
+  "https://bitvprayukti.in/static/media/g8.15b308c4a65ac3bc6eb3.jpg",
+  g2,
+  "https://bitvprayukti.in/static/media/g6.c5b87adbcee50692e146.jpg",
+];
 
 const socialLinks = {
   instagram: "https://www.instagram.com/vprayuktibit/",

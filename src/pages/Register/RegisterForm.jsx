@@ -27,6 +27,8 @@ function RegisterForm() {
     handleSubmit,
     setValue,
     reset,
+    setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
@@ -58,7 +60,6 @@ function RegisterForm() {
     }));
     setValue("members", members);
   };
-
 
   const onSubmit = (data) => {
     if (id != 1 && !data?.payment_proof) {
@@ -185,7 +186,13 @@ function RegisterForm() {
           {name == "AIML Hackathon" && (
             <ProblemSelectAiml register={register} />
           )}
-          {name == "IOT Hackathon" && <ProblemSelectIOT register={register} setValue={setValue} errors={errors}/>}
+          {name == "IOT Hackathon" && (
+            <ProblemSelectIOT
+              register={register}
+              setValue={setValue}
+              errors={errors}
+            />
+          )}
 
           {id != 1 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10">
@@ -193,6 +200,8 @@ function RegisterForm() {
                 register={register}
                 setValue={setValue}
                 errors={errors}
+                clearErrors={clearErrors}
+                setError={setError}
               />
               <InputField
                 label="Transaction Id"
@@ -213,6 +222,7 @@ function RegisterForm() {
               <InputField
                 label="Transaction Amount"
                 name="transaction_amount"
+                type="number"
                 register={register}
                 validation={{ required: "transaction_amount is required" }}
                 placeholder="Enter the amount"

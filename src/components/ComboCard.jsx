@@ -8,6 +8,7 @@ const TicketCard = ({ id, title, amount, details, size }) => {
       name: title,
       teamSize: "Hybrid",
       id,
+      fee:amount
     });
     navigate(`/register?${params.toString()}`);
   }

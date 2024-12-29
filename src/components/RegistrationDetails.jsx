@@ -1,3 +1,5 @@
+import { formatDateTime } from "../utils/helper";
+
 function RegistrationDetails({ data }) {
   let registrationDetails = [
     {
@@ -19,20 +21,23 @@ function RegistrationDetails({ data }) {
     },
     {
       label: "Department",
-      value: data?.team_leader_department || "team_leader_department",
+      value: data?.team_leader_department || "- - - - - -",
     },
-    { label: "Year", value: data?.team_leader_year || "team_leader_year" },
+    { label: "Year", value: data?.team_leader_year || "- - - - - -" },
     {
       label: "College",
-      value: data?.team_leader_college || "team_leader_college",
+      value: data?.team_leader_college || "- - - - - -",
     },
-    { label: "Team Name", value: data?.team_name || "team_name" },
-    { label: "Team Count", value: data?.team_count || "team_count" },
+    { label: "Team Name", value: data?.team_name || "- - - - - -" },
+    { label: "Team Count", value: data?.team_count || "------" },
     {
       label: "Arrival Status",
-      value: data?.arrival_status || "arrival_status",
+      value: data?.arrival_status || "- - - - - -",
     },
-    { label: "Registered At", value: data?.registered_at || "registered_at" },
+    {
+      label: "Registered At",
+      value: formatDateTime(data?.registered_at) || "- - - - - -",
+    },
   ];
 
   if (data?.event_id != 1) {
@@ -40,11 +45,11 @@ function RegistrationDetails({ data }) {
       ...registrationDetails,
       {
         label: "Transaction ID",
-        value: data?.transaction_id || "transaction_id",
+        value: data?.transaction_id || "- - - - - -",
       },
       {
         label: "Transaction Amount",
-        value: data?.transaction_amount || "transaction_amount",
+        value: data?.transaction_amount || "- - - - - -",
       },
     ];
   }
@@ -52,7 +57,7 @@ function RegistrationDetails({ data }) {
   if (data?.problem_statement) {
     registrationDetails.push({
       label: "Problem Statement",
-      value: data.problem_statement,
+      value: data?.problem_statement || "- - - - - -",
     });
   }
 
@@ -69,7 +74,7 @@ function RegistrationDetails({ data }) {
   return (
     <div className="mb-6 max-w-7xl mx-auto">
       <h2 className="text-xl font-semibold my-8 flex flex-col md:flex-row items-center gap-3">
-        Registration Details:
+        Registration Status:
         <span
           className={`text-white px-3 w-fit py-1 rounded-md ${
             data?.status === "Pending"

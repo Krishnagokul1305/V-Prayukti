@@ -38,7 +38,7 @@ function SearchPage() {
       const result = await getRegistration(applicationId);
       setData(result); // Store fetched data
     } catch (err) {
-      toast.error("Error fetching registration details."); // Handle error
+      toast.error(err.message || "Error fetching registration details."); // Handle error
     } finally {
       setIsLoading(false); // Reset loading state after the request
     }

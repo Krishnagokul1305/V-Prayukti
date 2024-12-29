@@ -26,7 +26,7 @@ function Glimpse() {
         </motion.h2>
 
         <motion.h3
-          className="text-3xl sm:text-6xl uppercase tracking-wider px-16 leading-10 sm:px-0 mb-16 font-semibold"
+          className="text-3xl text-center sm:text-6xl uppercase tracking-wider px-16 leading-10 sm:px-0 mb-16 font-semibold"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -38,7 +38,7 @@ function Glimpse() {
           }}
           variants={titleVariants}
         >
-          V-PRAYUKTI’24
+          V-PRAYUKTI’<br className="block md:hidden"/>23&24
         </motion.h3>
 
         <motion.div

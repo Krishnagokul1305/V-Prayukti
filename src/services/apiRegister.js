@@ -1,5 +1,3 @@
-import toast from "react-hot-toast";
-
 export const registerEvent = async (data) => {
   try {
     const formData = new FormData();
@@ -12,13 +10,10 @@ export const registerEvent = async (data) => {
       }
     }
 
-    const res = await fetch(
-      `https://vprayukti.kayteegee.in/api/register`,
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const res = await fetch(`https://vprayukti.kayteegee.in/api/register`, {
+      method: "POST",
+      body: formData,
+    });
     if (!res.ok) {
       throw new Error("Something went wrong");
     }
@@ -36,12 +31,12 @@ export const getRegistration = async (id) => {
       `https://vprayukti.kayteegee.in/api/register/${id.toUpperCase()}`
     );
     if (!res.ok) {
-      throw new Error("Something went wrong");
+      throw new Error("Invalid application ID");
     }
     const { data } = await res.json();
     return data;
   } catch (error) {
-    toast.error("Something went wrong");
+    console.log(error);
     throw error;
   }
 };
