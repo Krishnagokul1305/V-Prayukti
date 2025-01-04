@@ -14,13 +14,12 @@ export const getAllEvents = async () => {
 
 export const getEvent = async (id) => {
   try {
-    const res = await fetch(
-      `https://vprayukti.kayteegee.in/api/events/${id}`
-    );
+    const res = await fetch(`https://vprayukti.kayteegee.in/api/events/${id}`);
     if (!res.ok) {
       throw new Error("Something went wrong");
     }
     const { data } = await res.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -30,9 +29,7 @@ export const getEvent = async (id) => {
 
 export const getWorkShops = async () => {
   try {
-    const res = await fetch(
-      `https://vprayukti.kayteegee.in/api/workshops`
-    );
+    const res = await fetch(`https://vprayukti.kayteegee.in/api/workshops`);
     if (!res.ok) {
       throw new Error("Something went wrong");
     }

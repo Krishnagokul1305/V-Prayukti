@@ -58,6 +58,14 @@ function HeroSection({ event, setCondition, isAgreed }) {
             variants={itemVariants}
           >
             {event?.name}
+            {event.id == 1 && (
+              <>
+                <br />
+                <span className="text-secondary inline-block ms-3 text-lg">
+                  (#Deadline extended)
+                </span>
+              </>
+            )}
           </motion.h1>
           <motion.p
             className="md:text-[1.5vw] tracking-wider leading-8 md:leading-10"

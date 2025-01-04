@@ -16,6 +16,7 @@ import masterMind from "./images/master-mind.jpeg";
 import seriesQuiz from "./images/series-quiz.jpeg";
 import connexions from "./images/connexions.jpeg";
 import eventsBg from "./videos/eventsbg.mp4";
+import gift from "./images/gift.png"
 
 import g1 from "./glimpse/BIT_5490.jpg";
 import g2 from "./glimpse/BIT_5910.jpg";
@@ -26,6 +27,7 @@ import g6 from "./glimpse/DSC00483 (1).jpg";
 import g7 from "./glimpse/IMG_6722.jpeg";
 
 export {
+  gift,
   logo,
   landerBg,
   paperPresentation,

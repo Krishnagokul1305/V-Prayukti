@@ -9,6 +9,7 @@ import WorkshopList from "./WorkshopList";
 import ProblemStatementsAiml from "./ProblemStatementsAiml";
 import ProblemStatementsIot from "./ProblemStatementsIot";
 import DetailsBox from "../../components/DetailsBox";
+import PaperSubmission from "../../components/PaperSubmission";
 
 function EventPage() {
   const params = useParams();
@@ -29,8 +30,14 @@ function EventPage() {
         setCondition={setApprove}
         isAgreed={conditionsAccepted}
       />
-    
-      <DetailsBox event={data}/>
+
+      <DetailsBox event={data} />
+
+      {data.id == 1 && (
+        <div className="p-6">
+          <PaperSubmission />
+        </div>
+      )}
       {data.id == 9 && <WorkshopList />}
       {data.name == "AIML Hackathon" && <ProblemStatementsAiml />}
       {data.name == "IOT Hackathon" && <ProblemStatementsIot />}

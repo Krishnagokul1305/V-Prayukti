@@ -8,7 +8,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="h-screen event-hero flex items-center justify-center text-center space-y-3 md:space-y-8 overflow-hidden px-2">
+    <div className="h-screen event-hero relative flex items-center justify-center text-center space-y-3 md:space-y-8 overflow-hidden px-2">
       <div className="z-10 flex items-center flex-col justify-center text-center space-y-3 md:space-y-8">
         <motion.h1
           className="text-5xl md:text-[5vw] font-bold"
@@ -65,6 +65,7 @@ export default function HeroSection() {
           </span>
         </motion.a>
       </div>
+      {/* <GiftPopup/> */}
     </div>
   );
 }
