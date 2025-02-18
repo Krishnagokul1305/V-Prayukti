@@ -82,5 +82,5 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any issues or suggestions, contact **[Your Name]** at **[your.email@example.com](mailto\:your.email@example.com)**.
+For any issues or suggestions, contact **Gokulakrishnan K** at **[krishnagokul1729@gmail.com](mailto\:krishnagokul1729@gmail.com)**.
 
