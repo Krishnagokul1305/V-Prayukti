@@ -43,7 +43,7 @@ V-Prayukti/
 1. **Clone the Repository:**
 
    ```sh
-   git clone https://github.com/yourusername/V-Prayukti.git
+   git clone https://github.com/Krishnagokul1305/V-Prayukti.git
    cd V-Prayukti
    ```
 
