@@ -2,9 +2,8 @@ import { motion } from "framer-motion";
 import { eventsBg } from "../../assets";
 import Modal from "../../components/Modal";
 import List from "../../components/List";
-import { useNavigate } from "react-router-dom";
 
-function HeroSection({ event, setCondition, isAgreed }) {
+function HeroSection({ event, setCondition }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,8 +27,6 @@ function HeroSection({ event, setCondition, isAgreed }) {
       },
     },
   };
-
-  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -86,7 +83,7 @@ function HeroSection({ event, setCondition, isAgreed }) {
           >
             Details
           </motion.button>
-          {isAgreed ? (
+          {/* {isAgreed ? (
             <motion.button
               className="button px-5 py-3 rounded-full border border-secondary overflow-hidden hover:text-white"
               disabled={event?.name === "Workshop"}
@@ -101,10 +98,11 @@ function HeroSection({ event, setCondition, isAgreed }) {
             >
               Click Here to Register
             </motion.button>
-          ) : (
-            event.id != 9 && (
-              <Modal>
-                <Modal.Open>
+          ) : ( */}
+          {event.id != 9 && (
+            <Modal>
+              <Modal.Open>
+                {event.status == "Active" ? (
                   <motion.button
                     className="button px-5 py-3  mb-10 rounded-full border border-secondary overflow-hidden hover:text-white"
                     variants={itemVariants}
@@ -112,17 +110,18 @@ function HeroSection({ event, setCondition, isAgreed }) {
                   >
                     Register Now {event.id != 1 ? "@ " + event?.fee : ""}
                   </motion.button>
-                </Modal.Open>
-                <Modal.Window>
-                  <List
-                    setAgree={setCondition}
-                    rules={event.rulebook_url}
-                    event={event}
-                  />
-                </Modal.Window>
-              </Modal>
-            )
+                ):<span></span>}
+              </Modal.Open>
+              <Modal.Window>
+                <List
+                  setAgree={setCondition}
+                  rules={event.rulebook_url}
+                  event={event}
+                />
+              </Modal.Window>
+            </Modal>
           )}
+          {/* )} */}
         </div>
       </div>
     </motion.div>

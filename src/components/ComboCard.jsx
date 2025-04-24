@@ -1,14 +1,14 @@
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const TicketCard = ({ id, title, amount, details, size }) => {
+const TicketCard = ({ id, title, amount, details, size, status }) => {
   const navigate = useNavigate();
   function handleClick() {
     const params = new URLSearchParams({
       name: title,
       teamSize: "Hybrid",
       id,
-      fee:amount
+      fee: amount,
     });
     navigate(`/register?${params.toString()}`);
   }
@@ -44,12 +44,18 @@ const TicketCard = ({ id, title, amount, details, size }) => {
         ))}
       </div>
 
-      <button
-        className="button w-4/5 mt-auto justify-center flex items-center mx-auto rounded-full border border-secondary py-2 px-5 overflow-hidden text-sm xs:text-base md:text-xl text-white/80  hover:text-white"
-        onClick={handleClick}
-      >
-        Get Ticket <FaArrowRight className=" ml-2" />
-      </button>
+      {status == "Active" ? (
+        <button
+          className="button w-4/5 mt-auto justify-center flex items-center mx-auto rounded-full border border-secondary py-2 px-5 overflow-hidden text-sm xs:text-base md:text-xl text-white/80  hover:text-white"
+          onClick={handleClick}
+        >
+          Get Ticket <FaArrowRight className=" ml-2" />
+        </button>
+      ) : (
+        <button className="button w-4/5 mt-auto justify-center flex items-center mx-auto rounded-full border border-secondary py-2 px-5 overflow-hidden text-sm xs:text-base md:text-xl text-white/80  hover:text-white">
+          InActive
+        </button>
+      )}
     </div>
   );
 };

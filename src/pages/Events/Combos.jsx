@@ -18,6 +18,7 @@ function Combos() {
       amount: combo.fee,
       details: parseEventDetails(combo.short_name),
       size: "Hybrid",
+      status: combo.status,
     };
   });
 
@@ -31,6 +32,7 @@ function Combos() {
           <TicketCard
             key={data.id}
             id={data.id}
+            status={data.status}
             title={data.title}
             amount={data.amount}
             size={data.size}

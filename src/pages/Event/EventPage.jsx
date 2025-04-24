@@ -10,6 +10,7 @@ import ProblemStatementsAiml from "./ProblemStatementsAiml";
 import ProblemStatementsIot from "./ProblemStatementsIot";
 import DetailsBox from "../../components/DetailsBox";
 import PaperSubmission from "../../components/PaperSubmission";
+import PricePool from "../../components/PricePool";
 
 function EventPage() {
   const params = useParams();
@@ -33,6 +34,7 @@ function EventPage() {
 
       <DetailsBox event={data} />
 
+      <PricePool type={data.type || ""} ruppee={data.team_formation || ""} />
       {data.id == 1 && (
         <div className="p-6">
           <PaperSubmission />

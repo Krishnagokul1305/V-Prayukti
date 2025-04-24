@@ -15,12 +15,13 @@ export default function EventsNormal({ events }) {
   } else if (filterType === "hackathons") {
     filtered = events.filter((event) => event.type === "Hackathons");
   }
+  const eventDeadline = events.filter((event) => event.id == 9)[0].deadline;
 
   return (
     <div className="h-auto w-full p-5 md:px-10 py-20" id="events">
-      <div className="mx-auto flex flex-col justify-center items-center space-y-10">
+      <div className="mx-auto flex flex-col justify-center items-center space-y-7">
         <motion.h1
-          className="font-bold text-secondary flex flex-col text-2xl md:text-[3vw] tracking-wider mb-2 items-center"
+          className="font-bold text-secondary flex flex-col text-2xl md:text-[3vw] tracking-wider items-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

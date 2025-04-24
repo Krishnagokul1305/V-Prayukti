@@ -19,7 +19,6 @@ export const getEvent = async (id) => {
       throw new Error("Something went wrong");
     }
     const { data } = await res.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);

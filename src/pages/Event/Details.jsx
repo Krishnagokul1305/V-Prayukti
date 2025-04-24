@@ -32,7 +32,15 @@ function Details({ event }) {
   const items = [
     {
       title: "Rules and Regulations",
-      content: event.rulebook_url,
+      content: event?.rulebook_url,
+    },
+    {
+      title: "Price Pool",
+      content: `🏆 Win ${
+        event?.team_formation
+          ? `upto Rs.${event?.team_formation} /-`
+          : "MEMENTOS AND CERTIFICATES"
+      } in this event! 🎉`,
     },
   ];
 
@@ -41,7 +49,7 @@ function Details({ event }) {
       title: "Important Dates",
       content: createOrderedList(event.info),
     });
-    items.reverse()
+    items.reverse();
   }
   const coordinators = transformToCoordinators(event?.student_contacts);
   return (
@@ -66,7 +74,9 @@ function Details({ event }) {
           <div className="px-4 py-2 ms-5 text-lg md:text-xl ">
             <ul className="list-disc">
               {coordinators.map((c, i) => (
-                <li key={i} className="">{c}</li>
+                <li key={i} className="">
+                  {c}
+                </li>
               ))}
             </ul>
           </div>

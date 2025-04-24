@@ -65,7 +65,17 @@ function HeroSection() {
         >
           2025
         </motion.span>
+       
       </div>
+       {/* <div className="absolute bottom-0 w-full">
+          <Marquee
+            gradient={false}
+            speed={50}
+            className="text-lg max-w-md mx-auto w-full font-bold tracking-wider bg-black/30 text-red-700"
+          >
+            * Deadline Extended! Register now to participate in the event.
+          </Marquee>
+        </div> */}
     </div>
   );
 }

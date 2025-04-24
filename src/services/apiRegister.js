@@ -14,6 +14,7 @@ export const registerEvent = async (data) => {
       method: "POST",
       body: formData,
     });
+    
     if (!res.ok) {
       throw new Error("Something went wrong");
     }

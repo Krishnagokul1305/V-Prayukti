@@ -36,9 +36,9 @@ function Filter() {
       </div>
       <div
         className={`px-5 py-3 rounded-full cursor-pointer transition-colors duration-300 ${
-          activeFilter === "hackathons" ? "bg-secondary" : ""
-        }`} 
-        onClick={() => handleFilterChange("hackathons")}
+          activeFilter === "Hackathons" ? "bg-secondary" : ""
+        }`}
+        onClick={() => handleFilterChange("Hackathons")}
       >
         Hacks
       </div>

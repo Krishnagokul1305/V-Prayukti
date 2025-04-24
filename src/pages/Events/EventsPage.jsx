@@ -8,6 +8,7 @@ export default function EventsPage() {
   return (
     <div className="relative">
       <HeroSection />
+      {/* <DeadlineExtended/> */}
       <Countdown />
       <Suspense fallback={<FallBackLoader />}>
         <Events />

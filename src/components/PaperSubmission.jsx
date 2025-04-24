@@ -3,6 +3,8 @@ const PaperSubmission = () => {
     <div className="p-6  rounded-lg shadow-md max-w-xl mx-auto bg-stone-900/50">
       <h2 className="text-2xl font-bold mb-4">Paper Submission Details:</h2>
       <ul className="list-disc pl-5 text-xl space-y-2">
+        <li>With publication Rs. 499/-</li>
+        <li>Without publication Rs. 250/-</li>
         <li>Paper should contain 1 - 5 pages of content.</li>
         <li>
           Paper submission deadline -{" "}
